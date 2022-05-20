@@ -6,3 +6,8 @@ inputMagnitude = (inputKeyDirectionRight - inputKeyDirectionLeft != 0) || (input
 if !(global.gamePaused) { script_execute(state); }
 
 depth = -bbox_bottom;
+
+mouseAngle = point_direction(x, y, mouse_x, mouse_y);
+
+show_debug_message(mouseAngle);
+

@@ -14,19 +14,19 @@ function HandleInputForKeyboard(_movementBehavior) {
 	
 	if (_movementBehavior == MOVEMENT_BEHAVIOR.CHECK_CONTINUALLY) {
 		//Player Input for walking
-		inputKeyDirectionLeft = keyboard_check(vk_left);
-		inputKeyDirectionRight = keyboard_check(vk_right);
-		inputKeyDirectionUp = keyboard_check(vk_up);
-		inputKeyDirectionDown = keyboard_check(vk_down);
+		inputKeyDirectionLeft = keyboard_check(ord("A"));
+		inputKeyDirectionRight = keyboard_check(ord("D"));
+		inputKeyDirectionUp = keyboard_check(ord("W"));
+		inputKeyDirectionDown = keyboard_check(ord("S"));
 	}
 	if (_movementBehavior == MOVEMENT_BEHAVIOR.CHECK_ON_PRESSED) {
-		inputKeyDirectionLeft = keyboard_check_pressed(vk_left);
-		inputKeyDirectionRight = keyboard_check_pressed(vk_right);
-		inputKeyDirectionUp = keyboard_check_pressed(vk_up);
-		inputKeyDirectionDown = keyboard_check_pressed(vk_down);
+		inputKeyDirectionLeft = keyboard_check_pressed(ord("A"));
+		inputKeyDirectionRight = keyboard_check_pressed(ord("D"));
+		inputKeyDirectionUp = keyboard_check_pressed(ord("W"));
+		inputKeyDirectionDown = keyboard_check_pressed(ord("S"));
 	}
 	if (_movementBehavior == MOVEMENT_BEHAVIOR.CHECK_ON_PRESSED_HORIZONTAL) {
-		inputKeyDirectionLeft = keyboard_check_pressed(vk_left);
-		inputKeyDirectionRight = keyboard_check_pressed(vk_right);
+		inputKeyDirectionLeft = keyboard_check_pressed(ord("A"));
+		inputKeyDirectionRight = keyboard_check_pressed(ord("D"));
 	}
 }

@@ -11,11 +11,14 @@ direction = CARDINAL_DIRECTION.DOWN;
 hSpeed = 0;
 vSpeed = 0;
 
+mouseAngle = 0;
+
 transitionDoorEnter = false;
 
 speedWalk = 1.0;
 speedWalkMax = speedWalk;
 speedWalkCol = 0.6;
+
 //Other defined walk speeds go here
 
 spriteWalk = sPlayer; //TODO Add finalized sprite
