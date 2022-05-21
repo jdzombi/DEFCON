@@ -4,3 +4,7 @@ yMax = oPlayer.y + 100;
 yMin = oPlayer.y - 100;
 
 collisionMap = "Col"
+
+bulletDmg = 0;
+bulletSpeed = 5;
+

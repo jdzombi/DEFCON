@@ -13,7 +13,7 @@ shootCD--;
 if (mouse_check_button(mb_left) && shootCD <= 0){
 	shootCD = shootCDMax;
 	with (instance_create_layer(x, y, "bullets", oBullet)){
-		direction = point_direction(x, y, mouse_x, mouse_y); //wanted to use mouseAngle here but it got finnicky
-		speed = 2;
+		direction = point_direction(x, y, mouse_x, mouse_y); // mouseDir has issues with quick mouse movements
+		speed = oBullet.bulletSpeed;
 	}
 }
