@@ -1,5 +1,4 @@
 collisionMap = "Col"
-
-bulletDmg = 0;
-bulletSpeed = 5;
-
+spd = 0;
+dir = 0;
+damage = 1;
