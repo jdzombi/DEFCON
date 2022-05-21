@@ -7,9 +7,6 @@ attackRange = 72;
 resetState = false;
 
 hspd = 0;
-vspd = 0;
-vspdMax = 10;
-grav = 1;
 walkSpd = 1;
 
 currStateDuration = 0;

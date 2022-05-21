@@ -1,4 +1,4 @@
-if (x > xMax || x < xMin || y > yMax || y < yMin){
+if (distance_to_object(oPlayer)>100){
 	instance_destroy();
 }
 
