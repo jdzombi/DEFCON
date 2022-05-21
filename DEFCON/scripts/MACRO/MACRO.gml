@@ -12,4 +12,8 @@ function MACRO(){
 #macro OUT 0
 #macro IN 1
 
+
+#macro CONSTRUCTOR_EVENT event_user(14)	// User defined event for declaring methods in objects
+#macro METHOD_EVENT event_user(15)		// User defined event for declaring methods in objects
+
 }
