@@ -50,7 +50,7 @@ state_duration_init = function(_dur) {
 /// @returns {instance} self
 init_input = function() {
 	input = {
-		hdir: choose(0, 1, 2, 3),
+		hdir: choose(-1,1),
 		attackP: 0,
 	};
 	return self;
@@ -79,7 +79,7 @@ state_init = function() {
 /// @param {number} speed
 /// @returns {instance} self
 set_horizontal_motion = function(_spd) {
-	hspd = input.hdir * _spd;
+	x += input.hdir * _spd;
 	if (abs(input.hdir)) xscale = input.hdir;
 	return self;
 };
