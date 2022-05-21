@@ -13,10 +13,13 @@
     {"id":{"name":"HandleInputForKeyboard","path":"scripts/HandleInputForKeyboard/HandleInputForKeyboard.yy",},"order":3,},
     {"id":{"name":"sColFrames","path":"sprites/sColFrames/sColFrames.yy",},"order":3,},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":0,},
-    {"id":{"name":"sEnemyTest","path":"sprites/sEnemyTest/sEnemyTest.yy",},"order":1,},
     {"id":{"name":"AnimatePlayer","path":"scripts/AnimatePlayer/AnimatePlayer.yy",},"order":0,},
+<<<<<<< HEAD
+    {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":2,},
+=======
     {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":5,},
     {"id":{"name":"sTempBullet","path":"sprites/sTempBullet/sTempBullet.yy",},"order":4,},
+>>>>>>> main
     {"id":{"name":"HandleInputForGamepad","path":"scripts/HandleInputForGamepad/HandleInputForGamepad.yy",},"order":4,},
     {"id":{"name":"MACRO","path":"scripts/MACRO/MACRO.yy",},"order":1,},
     {"id":{"name":"pActor","path":"objects/pActor/pActor.yy",},"order":3,},
@@ -25,7 +28,6 @@
     {"id":{"name":"oPreciseTileChecker","path":"objects/oPreciseTileChecker/oPreciseTileChecker.yy",},"order":4,},
     {"id":{"name":"sCol","path":"sprites/sCol/sCol.yy",},"order":2,},
     {"id":{"name":"PlayerCollisionScripts","path":"scripts/PlayerCollisionScripts/PlayerCollisionScripts.yy",},"order":1,},
-    {"id":{"name":"oTestEnemy","path":"objects/oTestEnemy/oTestEnemy.yy",},"order":0,},
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},"order":0,},
   ],
   "Options": [
@@ -66,7 +68,6 @@
     {"folderPath":"folders/Assets.yy","order":14,"resourceVersion":"1.0","name":"Assets","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Assets/SnowState.yy","order":0,"resourceVersion":"1.0","name":"SnowState","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Parents.yy","order":3,"resourceVersion":"1.0","name":"Parents","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects/Enemies.yy","order":4,"resourceVersion":"1.0","name":"Enemies","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
