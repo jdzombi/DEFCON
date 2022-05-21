@@ -12,7 +12,7 @@ sprites_database_init("sEnemy", [
 input = {}; init_input();
 
 //hurtbox = hurtbox_create(id, sEnemyTest);
-hurtbox = noone; //TODO make hurtbox
+hurtbox = hurtbox_create(id, sEnemyTestMask); //TODO make hurtbox
 hitbox = noone;
     
 fsm = new SnowState("idle");

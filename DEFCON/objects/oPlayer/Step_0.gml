@@ -15,7 +15,7 @@ if (mouse_check_button(mb_left) && shootCD <= 0){
 	//TODO Fix Spawn location
 	with (instance_create_layer(x, y-15, "bullets", oBullet)){
 		//direction = point_direction(x, y, mouse_x, mouse_y); //wanted to use mouseAngle here but it got finnicky
-		direction = round(oPlayer.mouseAngle/45)*45;
-		speed = 2;
+		dir = round(oPlayer.mouseAngle/45)*45;
+		spd = 2;
 	}
 }
