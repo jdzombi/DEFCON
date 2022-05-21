@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sTempBullet",
+    "path": "sprites/sTempBullet/sTempBullet.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
