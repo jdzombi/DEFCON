@@ -11,7 +11,8 @@ sprites_database_init("sEnemy", [
 
 input = {}; init_input();
 
-hurtbox = hurtbox_create(id, sEnemyTest);
+//hurtbox = hurtbox_create(id, sEnemyTest);
+hurtbox = noone; //TODO make hurtbox
 hitbox = noone;
     
 fsm = new SnowState("idle");
@@ -19,7 +20,7 @@ fsm
     .event_set_default_function("draw", function() {
 		
 		
-    	draw_sprite_scaled(sprite_index, image_index, x, y, image_xscale, image_yscale);
+    	//draw_sprite_scaled(sprite_index, image_index, x, y, image_xscale, image_yscale);
     	
     	//var _w = 50, _h = 3;
     	//var _x = x-_w/2, _y = y-65;
