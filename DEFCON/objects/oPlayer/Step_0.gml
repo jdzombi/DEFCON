@@ -19,3 +19,8 @@ if (mouse_check_button(mb_left) && shootCD <= 0){
 		spd = 2;
 	}
 }
+
+if (mouse_check_button(mb_right) && meleeCD <= 0){
+	meleeCD = meleeCDMax;
+	//create hitbox
+}
