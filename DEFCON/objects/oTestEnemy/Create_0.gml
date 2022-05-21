@@ -89,3 +89,5 @@ fsm
     	}
     });
     
+//enemy stats
+hp = 10;

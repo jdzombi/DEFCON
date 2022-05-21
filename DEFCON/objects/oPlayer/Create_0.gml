@@ -28,6 +28,8 @@ localFrame = 0;
 //shooting stuff
 shootCD = 0;
 shootCDMax = 10;
+meleeCD = 0;
+meleeCDMax = 60;
 
 if (global.targetX != -1) {
 	x = global.targetX;
