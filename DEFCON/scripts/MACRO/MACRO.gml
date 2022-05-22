@@ -3,7 +3,7 @@ function MACRO(){
 #macro FRAME_RATE 60
 #macro TILE_SIZE 8
 #macro CARDINAL_DIR round(direction/45)
-#macro ROOM_START rTest
+#macro ROOM_START rTest2
 #macro RESOLUTION_W 256
 #macro RESOLUTION_H 144
 #macro SCALE_SIZE 4
