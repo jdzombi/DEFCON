@@ -1,6 +1,8 @@
 //Initialized variables 
 function InitPrincipalGlobals(){
 	
+	randomize();
+	
 	InitEnumGlobals();
 	
 	global.gamePaused = false;

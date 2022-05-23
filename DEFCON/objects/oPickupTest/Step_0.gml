@@ -3,5 +3,5 @@ if (pCol) {
 	instance_destroy();
 }
 
-HoverObject(self);
-timer++;
+HoverObject(.1,.1);
+
