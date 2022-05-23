@@ -7,8 +7,6 @@ sprites_database_init("sEnemy", [
 	["walk",			"Test"			],
 ]);
 
-
-
 input = {}; init_input();
 
 //hurtbox = hurtbox_create(id, sEnemyTest);
@@ -29,11 +27,12 @@ fsm
 	.add("idle", {
 		enter: function() {
 			state_init();
-			//hspd = 0;
 		},
 		step: function() {
 			// Change state
-			if (true) return fsm.change("walk");
+			
+			x++;
+			
 		}
 	})
 	.add("walk", {
@@ -43,7 +42,7 @@ fsm
 		},
 		step: function() {
 			//set_horizontal_motion(walkSpd);
-			x++;
+			MoveTowardsPlayer();
 			// Change state
 			//if (!abs(input.hdir)) return fsm.change("idle");
 

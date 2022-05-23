@@ -3,6 +3,5 @@ if (pCol) {
 	instance_destroy();
 }
 
-
 HoverObject(self);
 timer++;

@@ -1,7 +1,6 @@
 {
   "resources": [
     {"id":{"name":"SnowState","path":"scripts/SnowState/SnowState.yy",},"order":1,},
-    {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"order":9,},
     {"id":{"name":"oHurtbox","path":"objects/oHurtbox/oHurtbox.yy",},"order":1,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"__snowstate_config","path":"scripts/__snowstate_config/__snowstate_config.yy",},"order":0,},
@@ -12,12 +11,14 @@
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":3,},
     {"id":{"name":"tTileset","path":"tilesets/tTileset/tTileset.yy",},"order":1,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":1,},
+    {"id":{"name":"EnemyAI","path":"scripts/EnemyAI/EnemyAI.yy",},"order":3,},
     {"id":{"name":"pMovement","path":"objects/pMovement/pMovement.yy",},"order":0,},
     {"id":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"order":1,},
     {"id":{"name":"HandleInputForKeyboard","path":"scripts/HandleInputForKeyboard/HandleInputForKeyboard.yy",},"order":3,},
     {"id":{"name":"sColFrames","path":"sprites/sColFrames/sColFrames.yy",},"order":2,},
     {"id":{"name":"oPickupTest","path":"objects/oPickupTest/oPickupTest.yy",},"order":8,},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":0,},
+    {"id":{"name":"oTestEnemy14","path":"objects/oTestEnemy14/oTestEnemy14.yy",},"order":1,},
     {"id":{"name":"sEnemyTest","path":"sprites/sEnemyTest/sEnemyTest.yy",},"order":1,},
     {"id":{"name":"AnimatePlayer","path":"scripts/AnimatePlayer/AnimatePlayer.yy",},"order":0,},
     {"id":{"name":"InstanceHandling","path":"scripts/InstanceHandling/InstanceHandling.yy",},"order":1,},

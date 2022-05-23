@@ -36,7 +36,7 @@
     "path": "folders/Objects/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oTestEnemy",
+  "name": "oTestEnemy14",
   "tags": [],
   "resourceType": "GMObject",
 }
