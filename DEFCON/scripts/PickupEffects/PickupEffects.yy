@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Extra.yy",
   },
   "resourceVersion": "1.0",
-  "name": "HoverObject",
+  "name": "PickupEffects",
   "tags": [],
   "resourceType": "GMScript",
 }
