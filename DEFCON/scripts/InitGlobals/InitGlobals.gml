@@ -49,5 +49,10 @@ function InitEnumGlobals() {
 		CHECK_ON_RELEASED,
 		COUNT
 	}
+	
+	enum GUN_TYPE {
+		PISTOL	
+		
+	}
 
 }

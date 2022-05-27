@@ -56,4 +56,37 @@ function PlayerStateFree() {
 
 	}
 	*/
+	
+		mouseAngle = point_direction(x, y, mouse_x, mouse_y);
+		shootCD--;
+		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0){
+			oGame.playerCurrentLoadout[currentGun,1] -=1;
+			shootCD = shootCDMax;
+			shoot(currentGun);
+		}
+
+		if (mouse_check_button(mb_right) && meleeCD <= 0){
+			meleeCD = meleeCDMax;
+			//create hitbox
+		}
+
+}
+
+//loadout = primary or secondary (0 or 1)
+function shoot(loadout){
+	
+	//Pull the ID of the gun from the loadout of the player
+	tempGunID = oGame.playerCurrentLoadout[loadout,0];
+	//Pull the damage for the gun using the ID
+	tempDamage = oGame.gunArray[tempGunID,2];
+	
+	ScreenShake(.5, 10, false, true);
+	//TODO Fix Spawn location
+	//TODO Change bullet behavior for different guns
+	var _inst = instance_create_layer(x, y-15, "bullets", oBullet);
+	_inst.damage = tempDamage;
+	with (_inst){
+		dir = round(oPlayer.mouseAngle/45)*45;
+		spd = 2;
+	}
 }

@@ -31,6 +31,9 @@ shootCDMax = 10;
 meleeCD = 0;
 meleeCDMax = 60;
 
+//Which weapon, 0 or 1
+currentGun = 0; //TODO Set current gun when controlling player
+
 if (global.targetX != -1) {
 	x = global.targetX;
 	y = global.targetY;
