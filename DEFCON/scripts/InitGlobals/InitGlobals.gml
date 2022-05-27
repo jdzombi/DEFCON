@@ -9,6 +9,7 @@ function InitPrincipalGlobals(){
 	global.targetX = -1;
 	global.targetY = -1;
 	global.targetDirection = 0;
+	global.mp_grid = 0;
 	
 	
 	global.iCamera = instance_create_layer(x, y, layer, oCamera);
