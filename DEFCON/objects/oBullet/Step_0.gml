@@ -1,4 +1,4 @@
-if (distance_to_object(oPlayer)>100){
+if (distance_to_object(oPlayer)>150){
 	instance_destroy();
 }
 

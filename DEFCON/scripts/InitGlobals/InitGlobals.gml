@@ -1,6 +1,8 @@
 //Initialized variables 
 function InitPrincipalGlobals(){
 	
+	randomize();
+	
 	InitEnumGlobals();
 	
 	global.gamePaused = false;
@@ -47,6 +49,11 @@ function InitEnumGlobals() {
 		CHECK_ON_PRESSED_HORIZONTAL,
 		CHECK_ON_RELEASED,
 		COUNT
+	}
+	
+	enum GUN_TYPE {
+		PISTOL	
+		
 	}
 
 }

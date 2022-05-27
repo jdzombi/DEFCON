@@ -50,7 +50,7 @@ state_duration_init = function(_dur) {
 /// @returns {instance} self
 init_input = function() {
 	input = {
-		hdir: choose(-1,1),
+		hdir: choose(1, -1),
 		attackP: 0,
 	};
 	return self;
@@ -73,17 +73,58 @@ state_init = function() {
     return self;
 };
 
+/// @desc Applies gravity - increases vspd
+/// @returns {instance} self
+apply_gravity = function() {
+    vspd = 0;
+    return self;
+};
+
+/// @returns {bool} Whether I am standing on parCollide (true), or not (false)
+on_ground = function() {
+	return (place_meeting(x, y+1, parCollide));
+};
 
 
 /// @desc Sets hspd and xscale
 /// @param {number} speed
 /// @returns {instance} self
 set_horizontal_motion = function(_spd) {
-	x += input.hdir * _spd;
+	hspd = input.hdir * _spd;
 	if (abs(input.hdir)) xscale = input.hdir;
 	return self;
 };
 
+/// @desc Shaun Spalding collision code modified
+/// @returns {instance} self
+move_and_collide = function() {
+    var _sign;
+    
+    if (place_meeting(x+hspd, y, parCollide)) {
+        _sign = sign(hspd);
+        repeat (abs(hspd)) {
+            if (place_meeting(x+_sign, y, parCollide)) break;
+            x += _sign;
+        }
+        hspd = 0;
+        //flip();
+    } else {
+        x += hspd;
+    }
+    
+    if (place_meeting(x, y+vspd, parCollide)) {
+        _sign = sign(vspd);
+        repeat (abs(vspd)) {
+            if (place_meeting(x, y+_sign, parCollide)) break;
+            y += _sign;
+        }
+        vspd = 0;
+    } else {
+        y += vspd;
+    }
+    
+    return self;
+};
 
 /// @returns {bool} Whether I flipped (true), or not (false)
 check_flip = function() {
