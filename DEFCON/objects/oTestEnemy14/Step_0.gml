@@ -1,11 +1,11 @@
-if(oPlayer.x-x>0){
-state = MoveTowardsPlayer;	
+if (CheckForPlayer()){
+	state = MoveTowardsPlayer();
 }
 
 
 
 
-script_execute(state);
+/*script_execute(state);
 
 	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
 			hspd = 0;
@@ -14,7 +14,7 @@ script_execute(state);
 	if (TileMeetingPrecise(x, y+vspd, collisionMap)) {
 			vspd = 0;
 			
-		}
+		}*/
 
 x+= hspd;
 y+= vspd;
