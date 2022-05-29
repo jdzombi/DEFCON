@@ -13,14 +13,14 @@ var _index;
 global.mp_grid = mp_grid_create(0, 0, gridW, gridH, TILE_SIZE, TILE_SIZE);
 
 //add solid instances to grid (may not work for us)
+var lay_id = layer_get_id("Col");
+var tile_id = layer_tilemap_get_id(lay_id);
 
-/*layer_id = layer_get_id();
-
-for (var i=0; i < _w; i++){
-	for (var j=0; j < _h; i++){
-		if (tilemap_get(layer_id, i, j)){
-			mp_grid_add_cell(global.mp_grid, i, j);
-		}	
+for (var i=23; i < 28; i++){
+	for (var j=16; j < 19; j++){
+		// if (tilemap_get(tile_id, i*TILE_SIZE, j*TILE_SIZE) =! -1) {
+        //    mp_grid_add_cell(global.mp_grid, i, j);
+        // }
+		mp_grid_add_cell(global.mp_grid, i, j);
 	}
-/*}
-
+}
