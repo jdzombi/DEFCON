@@ -5,7 +5,7 @@ if (p_distance > 5){
 } else {
 	hspd = 0;
 	vspd = 0;
-	//attack state
+	state = Attack();
 }
 
 

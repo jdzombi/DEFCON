@@ -22,5 +22,5 @@ path = path_add();
 
 //set delay for calculating path (saves on cpu)
 calcPathDelay = 3;
-//set timer for calculating path
+//set timer for calculating path (wake-up time)
 calcPathTimer = irandom(30);
