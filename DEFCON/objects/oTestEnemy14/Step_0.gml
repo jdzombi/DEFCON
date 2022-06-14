@@ -1,11 +1,17 @@
-if(oPlayer.x-x>0){
-state = MoveTowardsPlayer;	
+p_distance = distance_to_object(oPlayer);
+
+if (p_distance > 5){
+	state = MoveTowardsPlayer();
+} else {
+	hspd = 0;
+	vspd = 0;
+	state = Attack();
 }
 
 
 
 
-script_execute(state);
+//script_execute(state);
 
 	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
 			hspd = 0;

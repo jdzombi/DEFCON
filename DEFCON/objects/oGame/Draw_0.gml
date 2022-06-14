@@ -1,4 +1,3 @@
-//draw AI grid for testing
-if keyboard_check(vk_alt){
+if (keyboard_check(ord("O"))) {
 	mp_grid_draw(global.mp_grid);
 }
