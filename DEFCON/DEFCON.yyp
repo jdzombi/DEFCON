@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"oServer","path":"objects/oServer/oServer.yy",},"order":9,},
     {"id":{"name":"SnowState","path":"scripts/SnowState/SnowState.yy",},"order":1,},
     {"id":{"name":"oHurtbox","path":"objects/oHurtbox/oHurtbox.yy",},"order":1,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
@@ -95,7 +96,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.5.0.8",
+    "IDEVersion": "2022.5.1.16",
   },
   "resourceVersion": "1.5",
   "name": "DEFCON",
