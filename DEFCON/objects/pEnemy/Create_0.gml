@@ -14,5 +14,6 @@ currStateDuration = 0;
 spritesDatabase = {};
 stateDuration   = {};
 input = {}; init_input();
+localFrame = 0;
 
 fsm = noone;

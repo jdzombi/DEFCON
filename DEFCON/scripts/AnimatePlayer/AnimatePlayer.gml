@@ -28,9 +28,9 @@ function AnimateNPC(argument0) {
 	//Update Sprite
 	
 	var _totalFrames = sprite_get_number(sprite_index)/4;
-	
+	var _cardinal = round(point_direction(x,y,oPlayer.x,oPlayer.y)/90);
 
-	image_index = localFrame + (cardinal*_totalFrames);
+	image_index = localFrame + (_cardinal*_totalFrames);
 	localFrame += sprite_get_speed(sprite_index) / (2*FRAME_RATE*argument0);
 
 	//Animations Loop

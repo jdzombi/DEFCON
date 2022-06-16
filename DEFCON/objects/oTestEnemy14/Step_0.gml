@@ -2,10 +2,12 @@ p_distance = distance_to_object(oPlayer);
 
 if (p_distance > 5){
 	state = MoveTowardsPlayer();
+	sprite_index = sWalk;
 } else {
 	hspd = 0;
 	vspd = 0;
 	state = Attack();
+	sprite_index = sAttack;
 }
 
 
@@ -21,6 +23,8 @@ if (p_distance > 5){
 			vspd = 0;
 			
 		}
+		
+AnimateNPC(1);
 
 x+= hspd;
 y+= vspd;

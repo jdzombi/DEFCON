@@ -1,5 +1,8 @@
 event_inherited();
 
+sIdle = sGreenIdle;
+sWalk = sGreenWalk;
+sAttack = sGreenAttack;
 
 collisionMap = "Col"
 //enemy stats
@@ -14,8 +17,10 @@ hspd = 0;
 vspd = 0;
 mask_index = sEnemyTest;
 hurtbox = hurtbox_create(id, sEnemyTestMask);
+hitbox = noone;
 
 alert = false;
+
 
 //create ai pathing
 path = path_add();

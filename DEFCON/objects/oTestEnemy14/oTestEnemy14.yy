@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sEnemyTest",
-    "path": "sprites/sEnemyTest/sEnemyTest.yy",
+    "name": "sGreenIdle",
+    "path": "sprites/sGreenIdle/sGreenIdle.yy",
   },
   "solid": false,
   "visible": true,

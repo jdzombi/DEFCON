@@ -4,7 +4,6 @@ function Idle(){
 
 function MoveTowardsPlayer(){
 	
-	
 	if (calcPathTimer-- <= 0){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, oPlayer.x, oPlayer.y, 1);
