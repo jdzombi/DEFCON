@@ -14,6 +14,8 @@ if (TileMeetingPrecise(x, y, collisionMap)) {
 _inst = collision_line(x, y, _xto, _yto, pEnemy, false, true); 
 if (_inst != noone) {
     if (_inst.hit(damage)) {
+		
+		Push(lengthdir_x(spd/2, dir),lengthdir_y(spd, dir),_inst);
 		instance_destroy();
 	
         exit;

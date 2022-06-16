@@ -1,8 +1,19 @@
 function Idle(){
-	
+	if (p_distance > 5){
+		state = MoveTowardsPlayer;
+	}
 }
 
 function MoveTowardsPlayer(){
+	sprite_index = sWalk;
+		//Enter Move State
+		
+		
+	if (p_distance < 5){
+		state = Attack;
+	}
+
+	
 	
 	if (calcPathTimer-- <= 0){
 		calcPathTimer = calcPathDelay;
@@ -25,10 +36,36 @@ function MoveTowardsPlayer(){
 }
 	
 function Attack(){
+	sprite_index = sAttack;
+		hspd = 0;
+		vspd = 0;
+		
+		if (p_distance > 5){
+		state = MoveTowardsPlayer;
+	}
+		
+		//TODO Condition for leaving state
 	//TODO draw hitboxes towards direction of player
+}
+
+function Stunned(){
+	vspd = 0;
+	hspd = 0;
+	stunTimer --;
+	
+	if(stunTimer<=0){
+		state = Idle;
+		stunTimer = 0;
+	}
+	
 }
 
 function Death(){
 	//TODO play death animation
 	instance_destroy();
+}
+
+function Push(xForce,yForce,obj){
+		obj.x += xForce;
+		obj.y += yForce;
 }

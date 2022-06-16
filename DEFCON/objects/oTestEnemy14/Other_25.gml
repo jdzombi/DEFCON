@@ -4,7 +4,10 @@ event_inherited();
 hit = function(_damage, _attackType) {
 	hp -= _damage;
 	if (hp <= 0){
-		state = Death();
+		state = Death;
+	} else {
+	stunTimer = stunTimerMax;
+	state = Stunned;
 	}
 	return true;
 };

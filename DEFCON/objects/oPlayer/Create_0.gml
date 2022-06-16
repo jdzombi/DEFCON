@@ -27,7 +27,7 @@ localFrame = 0;
 
 //shooting stuff
 shootCD = 0;
-shootCDMax = 10;
+shootCDMax = 20;
 meleeCD = 0;
 meleeCDMax = 60;
 

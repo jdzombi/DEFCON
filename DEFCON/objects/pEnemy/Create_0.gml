@@ -9,6 +9,9 @@ resetState = false;
 hspd = 0;
 walkSpd = 1;
 
+stunTimer = 0;
+stunTimerMax = room_speed * .1;
+
 currStateDuration = 0;
 
 spritesDatabase = {};

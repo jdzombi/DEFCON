@@ -1,19 +1,6 @@
 p_distance = distance_to_object(oPlayer);
 
-if (p_distance > 5){
-	state = MoveTowardsPlayer();
-	sprite_index = sWalk;
-} else {
-	hspd = 0;
-	vspd = 0;
-	state = Attack();
-	sprite_index = sAttack;
-}
-
-
-
-
-//script_execute(state);
+script_execute(state);
 
 	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
 			hspd = 0;
@@ -24,6 +11,7 @@ if (p_distance > 5){
 			
 		}
 		
+
 AnimateNPC(1);
 
 x+= hspd;
