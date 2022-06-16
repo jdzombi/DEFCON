@@ -26,10 +26,10 @@ function MoveTowardsPlayer(){
 }
 	
 function Attack(){
-	//draw hitboxes towards direction of player
+	//TODO draw hitboxes towards direction of player
 }
 
 function Death(){
-	//play death animation
+	//TODO play death animation
 	instance_destroy();
 }

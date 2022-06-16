@@ -13,12 +13,12 @@ PAUSED_TIME = get_timer();
 PAUSED = false;
 PLAYER = noone;
 
-//Gun ID
-//Gun type Enum
-//Damage
-//Mag Size Mag
-//Ammo Reserve Default
-//Ammo Reserve Max
+//0 - Gun ID
+//1 - Gun type Enum
+//2 - Damage
+//3 - Mag Size Mag
+//4 - Ammo Reserve Default
+//5 - Ammo Reserve Max
 gunArray = [
 	[0,GUN_TYPE.PISTOL,1,8,32,128]
 

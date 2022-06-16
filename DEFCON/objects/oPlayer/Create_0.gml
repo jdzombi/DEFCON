@@ -21,8 +21,8 @@ speedWalkCol = 0.6;
 
 //Other defined walk speeds go here
 
-spriteWalk = sPlayer; //TODO Add finalized sprite
-spriteIdle = sPlayer;
+spriteWalk = sPlayerWalk; //TODO Add finalized sprite
+spriteIdle = sPlayerStand;
 localFrame = 0;
 
 //shooting stuff

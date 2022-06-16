@@ -3,14 +3,20 @@ function AnimatePlayer(argument0) {
 	var _totalFrames = sprite_get_number(sprite_index)/8;
 	mouseAngle = round(oPlayer.mouseAngle/45);
 	
+	var _modify = 0;
+	if((mouseAngle+4)%8 == (oPlayer.inputDirection/45)){
+		_modify = -1;
+	} else {
+		_modify = 1;	
+	}
 
 	image_index = localFrame + (mouseAngle * _totalFrames);
-	localFrame += sprite_get_speed(sprite_index) / (2*FRAME_RATE*argument0);
+	localFrame += _modify*(sprite_get_speed(sprite_index) / (2*FRAME_RATE*argument0));
 
 	//Animations Loop
-	if(localFrame>= _totalFrames){
+	if(localFrame>= _totalFrames xor localFrame<0){
 		animationEnd = true;
-		localFrame-=_totalFrames;
+		localFrame-=(_totalFrames)*_modify;
 	} else animationEnd = false;
 
 

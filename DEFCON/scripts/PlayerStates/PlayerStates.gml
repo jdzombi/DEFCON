@@ -20,7 +20,7 @@ function PlayerStateFree() {
 		localFrame = 0;	
 	}
 
-	//Update Image Index
+	//Update Image Index	
 	AnimatePlayer(playback);
 	
 	//TODO Add entities to press E on (door, item, etc)
@@ -58,6 +58,11 @@ function PlayerStateFree() {
 	*/
 	
 		mouseAngle = point_direction(x, y, mouse_x, mouse_y);
+		
+		//If we wanted to swap to Arrow Keys and WASD
+		//xinputDirection = point_direction(0, 0, keyboard_check(vk_right) - keyboard_check(vk_left), keyboard_check(vk_down) - keyboard_check(vk_up));
+		//mouseAngle = xinputDirection;
+		
 		shootCD--;
 		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0){
 			oGame.playerCurrentLoadout[currentGun,1] -=1;
@@ -87,6 +92,6 @@ function shoot(loadout){
 	_inst.damage = tempDamage;
 	with (_inst){
 		dir = round(oPlayer.mouseAngle/45)*45;
-		spd = 2;
+		spd = 4;
 	}
 }
