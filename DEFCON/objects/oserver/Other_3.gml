@@ -1,0 +1,1 @@
+network_destroy(server); //remove server when game closes

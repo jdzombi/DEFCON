@@ -1,0 +1,1 @@
+network_destroy(client); //remove client when game closes

@@ -34,6 +34,11 @@ meleeCDMax = 60;
 //Which weapon, 0 or 1
 currentGun = 0; //TODO Set current gun when controlling player
 
+//create random ID for player (needed for multiplayer)
+randomize();
+var choice = irandom_range(1, 10000);
+myID = choice;
+
 if (global.targetX != -1) {
 	x = global.targetX;
 	y = global.targetY;

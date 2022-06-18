@@ -1,7 +1,7 @@
-port = 48936;
+port = 9999;
 max_clients = 2;
 
-network_create_server(network_socket_udp, port, max_clients);
+server = network_create_server(network_socket_tcp, port, max_clients);
 
 server_buffer = buffer_create(1024, buffer_fixed, 1);
 
