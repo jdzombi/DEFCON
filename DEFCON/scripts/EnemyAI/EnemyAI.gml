@@ -12,13 +12,21 @@ function MoveTowardsPlayer(){
 	if (p_distance < 5){
 		state = Attack;
 	}
-
+	
+	var _xS = sign(oPlayer.x - x);
+	var _yS = sign(oPlayer.y - y);
+	
+	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap)){
+		calcPathTimer = 0;
+	}
 	
 	
-	if (calcPathTimer-- <= 0){
+	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(oPlayer.x - x != lastCheckedX)|| sign(oPlayer.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, oPlayer.x, oPlayer.y, 1);
-	
+		lastCheckedDistance = p_distance;
+		lastCheckedX = sign(oPlayer.x - x);
+		lastCheckedY = sign(oPlayer.y - y);
 	
 		if (_see_player){
 			var _pathX = path_get_point_x(path, 1);
@@ -27,6 +35,9 @@ function MoveTowardsPlayer(){
 			
 			hspd = lengthdir_x(moveSpeed, _angle);
 			vspd = lengthdir_y(moveSpeed, _angle);
+			
+			
+			
 			
 		} else {
 			hspd = 0;
