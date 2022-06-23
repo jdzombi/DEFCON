@@ -91,7 +91,8 @@ function shoot(loadout){
 	var _inst = instance_create_layer(x, y-15, "bullets", oBullet);
 	_inst.damage = tempDamage;
 	with (_inst){
-		dir = round(oPlayer.mouseAngle/45)*45;
-		spd = 4;
+		//dir = round(oPlayer.mouseAngle/45)*45;
+		dir = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y+14);
+		spd = 6;
 	}
 }
