@@ -3,7 +3,7 @@ function MACRO(){
 #macro FRAME_RATE 60
 #macro TILE_SIZE 8
 #macro CARDINAL_DIR round(direction/45)
-#macro ROOM_START rTest2
+#macro ROOM_START rMenu
 #macro RESOLUTION_W 256
 #macro RESOLUTION_H 144
 #macro SCALE_SIZE 4
@@ -27,6 +27,11 @@ enum ANCHOR {
 	TOP_LEFT    = 7, TOP_CENTER    = 8, TOP_RIGHT    = 9,
 	MIDDLE_LEFT = 4, MIDDLE_CENTER = 5, MIDDLE_RIGHT = 6,
 	BOTTOM_LEFT = 1, BOTTOM_CENTER = 2, BOTTOM_RIGHT = 3,
+}
+
+enum DATA{
+	INIT_DATA,
+	PLAYER_UPDATE
 }
 
 }

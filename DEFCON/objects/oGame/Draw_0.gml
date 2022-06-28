@@ -4,3 +4,4 @@ if (keyboard_check(ord("O"))) {
 
 //playerCurrentLoadout[0,1];
 //playerCurrentLoadout[0,2];
+

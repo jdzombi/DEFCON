@@ -35,3 +35,10 @@ playerCurrentLoadout = [
 	[-1,-1,-1]
 
 ];
+
+//networking
+server_ip = "127.0.0.1";
+server_port = 3000;
+is_server = false;
+//connected clients
+clients = ds_list_create();
