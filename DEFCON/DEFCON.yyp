@@ -1,6 +1,5 @@
 {
   "resources": [
-    {"id":{"name":"oServer","path":"objects/oServer/oServer.yy",},"order":9,},
     {"id":{"name":"sGreenAttack","path":"sprites/sGreenAttack/sGreenAttack.yy",},"order":2,},
     {"id":{"name":"SnowState","path":"scripts/SnowState/SnowState.yy",},"order":1,},
     {"id":{"name":"oHurtbox","path":"objects/oHurtbox/oHurtbox.yy",},"order":1,},
@@ -41,14 +40,12 @@
     {"id":{"name":"tCol","path":"tilesets/tCol/tCol.yy",},"order":0,},
     {"id":{"name":"sEnemyTestMask","path":"sprites/sEnemyTestMask/sEnemyTestMask.yy",},"order":2,},
     {"id":{"name":"PickupEffects","path":"scripts/PickupEffects/PickupEffects.yy",},"order":3,},
-    {"id":{"name":"oClient","path":"objects/oClient/oClient.yy",},"order":10,},
     {"id":{"name":"oPreciseTileChecker","path":"objects/oPreciseTileChecker/oPreciseTileChecker.yy",},"order":4,},
     {"id":{"name":"oHitbox","path":"objects/oHitbox/oHitbox.yy",},"order":0,},
     {"id":{"name":"rTest2","path":"rooms/rTest2/rTest2.yy",},"order":2,},
     {"id":{"name":"sCol","path":"sprites/sCol/sCol.yy",},"order":1,},
     {"id":{"name":"PlayerCollisionScripts","path":"scripts/PlayerCollisionScripts/PlayerCollisionScripts.yy",},"order":1,},
     {"id":{"name":"Hitboxes","path":"scripts/Hitboxes/Hitboxes.yy",},"order":0,},
-    {"id":{"name":"NetHandler","path":"scripts/NetHandler/NetHandler.yy",},"order":5,},
     {"id":{"name":"oTestEnemyOLD","path":"objects/oTestEnemyOLD/oTestEnemyOLD.yy",},"order":0,},
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},"order":0,},
   ],
