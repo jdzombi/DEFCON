@@ -267,13 +267,15 @@ function PlayerCollision() {
 
 
 	//Move Commit
-	if (transitionDoorEnter) {
-		x += (_xCommit / 3);
-		y += (_yCommit / 3);
-	}
-	else {
-		x += _xCommit;
-		y += _yCommit;
+	if (isLocal){
+		if (transitionDoorEnter) {
+			x += (_xCommit / 3);
+			y += (_yCommit / 3);
+		}
+		else {
+			x += _xCommit;
+			y += _yCommit;
+		}
 	}
 
 }

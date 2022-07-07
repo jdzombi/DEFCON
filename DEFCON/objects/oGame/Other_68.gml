@@ -40,4 +40,15 @@ else if (type == network_type_data) {
 			plr.is_local = false;
 		}
 	}
+	//player update
+	else if (data == DATA.PLAYER_UPDATE) {
+		var pID = buffer_read(buffer, buffer_u8);
+		
+		with (oPlayer) {
+			if (pID == playerID) {
+				x = buffer_read(buffer, buffer_s16);
+				y = buffer_read(buffer, buffer_s16);
+			}
+		}
+	}
 }
