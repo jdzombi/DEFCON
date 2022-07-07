@@ -2,6 +2,7 @@
 if (room == rMenu){
 	//host
 	if (keyboard_check_pressed(vk_space)) {
+		is_multiplayer = true;
 		server = network_create_server(network_socket_tcp, server_port, 2);
 		
 		//failed
@@ -15,6 +16,7 @@ if (room == rMenu){
 	
 	//join
 	else if (keyboard_check_pressed(vk_enter)){
+		is_multiplayer = true;
 		server = network_create_socket(network_socket_tcp);
 		var res = network_connect(server, server_ip, server_port);
 		
@@ -24,5 +26,8 @@ if (room == rMenu){
 		} else {
 			room_goto(rTest2);
 		}
+	} else if (keyboard_check_pressed(vk_tab)) {
+		is_multiplayer = false;
+		room_goto(rTest2);	
 	}
 }

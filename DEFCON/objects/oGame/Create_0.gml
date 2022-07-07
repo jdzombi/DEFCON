@@ -37,6 +37,7 @@ playerCurrentLoadout = [
 ];
 
 //networking
+is_multiplayer = false;
 server_ip = "127.0.0.1";
 server_port = 3000;
 is_server = false;

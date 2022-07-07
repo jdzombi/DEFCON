@@ -1,6 +1,6 @@
  //enter as player or client
 if (room == rMenu){
-	var menu_str = "Press SPACE to host game\nPress ENTER to join game";
+	var menu_str = "Press Tab to start Singleplayer\nPress SPACE to host game\nPress ENTER to join game";
 	
 	draw_text(0, 0, menu_str);
 }
