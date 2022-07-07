@@ -1,4 +1,4 @@
-var type = async_load[? type];
+var type = async_load[? "type"];
 
 //Connected
 if (type == network_type_connect) {
@@ -14,9 +14,9 @@ if (type == network_type_connect) {
 	buffer_delete(buffer);
 	
 	//create player2 instance
-	var player2 = instance_create_layer(295, 152, "Instances", oPlayer);
+	var player2 = instance_create_layer(248, 152, "Instances", oPlayer);
 	player2.playerID = ds_list_size(clients);
-	player2.is_local = false
+	player2.isLocal = false
 	
 	//add to list
 	ds_list_add(clients, socket);
@@ -35,9 +35,9 @@ else if (type == network_type_data) {
 		
 		//shows other active players on screen
 		for (var i=0; i<count; i++) {
-			var player = instance_create_layer(248, 152, "Instances", oPlayer);
+			var plr = instance_create_layer(248, 152, "Instances", oPlayer);
 			plr.playerID = i;
-			plr.is_local = false;
+			plr.isLocal = false;
 		}
 	}
 	//player update

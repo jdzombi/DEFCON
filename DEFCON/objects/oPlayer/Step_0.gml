@@ -17,7 +17,7 @@ buffer_write(buffer, buffer_s16, x);
 buffer_write(buffer, buffer_s16, y);
 		
 //send position to server
-if (oGame.is_server) {
+if (!oGame.is_server) {
 	network_send_packet(oGame.server, buffer, buffer_get_size(buffer));
 }
 //send position to clients
