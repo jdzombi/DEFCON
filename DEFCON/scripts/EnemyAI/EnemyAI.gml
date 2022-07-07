@@ -13,20 +13,20 @@ function MoveTowardsPlayer(){
 		state = Attack;
 	}
 	
-	var _xS = sign(oPlayer.x - x);
-	var _yS = sign(oPlayer.y - y);
+	var _xS = sign(nearestPlayer.x - x);
+	var _yS = sign(nearestPlayer.y - y);
 	
 	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap)){
 		calcPathTimer = 0;
 	}
 	
 	
-	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(oPlayer.x - x != lastCheckedX)|| sign(oPlayer.y - y != lastCheckedY )))){
+	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(nearestPlayer.x - x != lastCheckedX)|| sign(nearestPlayer.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
-		var _see_player = mp_grid_path(global.mp_grid, path, x, y, oPlayer.x, oPlayer.y, 1);
+		var _see_player = mp_grid_path(global.mp_grid, path, x, y, nearestPlayer.x, nearestPlayer.y, 1);
 		lastCheckedDistance = p_distance;
-		lastCheckedX = sign(oPlayer.x - x);
-		lastCheckedY = sign(oPlayer.y - y);
+		lastCheckedX = sign(nearestPlayer.x - x);
+		lastCheckedY = sign(nearestPlayer.y - y);
 	
 		if (_see_player){
 			var _pathX = path_get_point_x(path, 1);

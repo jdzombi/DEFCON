@@ -12,7 +12,9 @@ function InitPrincipalGlobals(){
 	global.targetY = -1;
 	global.targetDirection = 0;
 	global.mp_grid = 0;
+	global.mainMenu = false;
 	
+	global.enemyCountMax = 15;
 	
 	global.iCamera = instance_create_layer(x, y, layer, oCamera);
 	display_set_gui_size(RESOLUTION_W,RESOLUTION_H);

@@ -34,6 +34,9 @@ meleeCDMax = 60;
 //Which weapon, 0 or 1
 currentGun = 0; //TODO Set current gun when controlling player
 
+//bool to show gunUI
+if(instance_exists(oUIController))oUIController.combatUI = true;
+
 //local or client
 isLocal = true;
 playerID = -1;
