@@ -1,9 +1,49 @@
 nearestPlayer = instance_nearest(x, y, oPlayer);
 p_distance = distance_to_object(nearestPlayer);
 
-nearestEnemy = instance_nearest(x+hspd, y+vspd, pEnemy);
-
 script_execute(state);
+
+
+AnimateNPC(1);
+
+//Selecting sides to check for collision
+if(hspd<=0){
+	hCol = bbox_left;
+} else hCol = bbox_right;
+
+
+if(vspd<=0){
+	vCol = bbox_top;
+} else vCol = bbox_bottom;
+
+//Stop if we are going to collide into another enemy
+if(vspd!=0){
+	if(position_meeting(x,vCol+vspd,pEnemy)){
+		vspd = 0;
+	}
+}
+
+if(hspd!=0){
+	if(position_meeting(hCol+hspd,y,pEnemy)){
+		hspd = 0;
+	}
+}
+
+//If we arent moving, walk around the enemy
+
+if(hspd ==0 && vspd ==0 && state = MoveTowardsPlayer && distance_to_object(nearestPlayer)<45){
+	var distX = abs(x - nearestPlayer.x);
+	var distY = abs(y - nearestPlayer.y);
+	//If we are closer to the player on the X axis, but not equal to
+	if(distX < distY && distX !=0){
+		hspd = sign(x-nearestPlayer.x);
+	} else if(distY < distX && distY !=0){
+		vspd = sign(y-nearestPlayer.y);
+	}
+	
+}
+
+//Wall collision
 	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
 			var _signToPlayer = sign(nearestPlayer.y - y);
 			vspd = moveSpeed * _signToPlayer;
@@ -24,30 +64,8 @@ script_execute(state);
 			
 		} 
 
-if(position_meeting(x,y,pEnemy)){
-	
-	var _list = ds_list_create();
-	var _num = instance_place_list(x, y, pEnemy, _list, false);
-	
-	var _xPush = sign(x-nearestEnemy.x)*(_num*10);
-	var _yPush = sign(y-nearestEnemy.y)*(_num*10);
-	
-	if(!TileMeetingPrecise(x-_xPush, y - _yPush, collisionMap)){
-		x-=_xPush;
-		y-=_yPush;
-	} else {
-		with(nearestEnemy){
-			x+=_xPush;
-			y+=_yPush;
-		}
-	
-	}
-	
-	hspd = 0;
-	vspd = 0;
-}
 
-AnimateNPC(1);
+
 
 x+= hspd;
 y+= vspd;

@@ -3,7 +3,8 @@ event_inherited();
 sIdle = sGreenIdle;
 sWalk = sGreenWalk;
 sAttack = sGreenAttack;
-
+xRand = irandom_range(0,20)-10;
+yRand = irandom_range(0,20)-10;
 collisionMap = "Col"
 //enemy stats
 hp = 10;

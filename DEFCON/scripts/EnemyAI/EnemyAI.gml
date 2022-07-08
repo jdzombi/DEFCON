@@ -25,8 +25,8 @@ function MoveTowardsPlayer(){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, nearestPlayer.x, nearestPlayer.y, 1);
 		lastCheckedDistance = p_distance;
-		lastCheckedX = sign(nearestPlayer.x - x);
-		lastCheckedY = sign(nearestPlayer.y - y);
+		lastCheckedX = sign(nearestPlayer.x + xRand - x);
+		lastCheckedY = sign(nearestPlayer.y + yRand - y);
 	
 		if (_see_player){
 			var _pathX = path_get_point_x(path, 1);
@@ -79,4 +79,5 @@ function Death(){
 function Push(xForce,yForce,obj){
 		obj.x += xForce;
 		obj.y += yForce;
+	
 }
