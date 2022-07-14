@@ -16,6 +16,7 @@ if (oGame.is_multiplayer){
 	buffer_write(buffer, buffer_u8, playerID);
 	buffer_write(buffer, buffer_s16, x);
 	buffer_write(buffer, buffer_s16, y);
+	buffer_write(buffer, buffer_u8, sprite_index);
 		
 	//send position to server
 	if (!oGame.is_server) {
