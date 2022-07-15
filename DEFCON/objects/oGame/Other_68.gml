@@ -53,5 +53,14 @@ if (is_multiplayer){
 				}
 			}
 		}
+		//player shoot
+		else if (data == DATA.PLAYER_SHOOT){
+			var pID = buffer_read(buffer, buffer_u8);
+			with (oPlayer) {
+				if (pID == playerID) {
+					shoot(currentGun);
+				}
+			}
+		}
 	}
 }

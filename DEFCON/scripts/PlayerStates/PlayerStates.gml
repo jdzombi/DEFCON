@@ -65,9 +65,33 @@ function PlayerStateFree() {
 		
 		shootCD--;
 		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0){
-			oGame.playerCurrentLoadout[currentGun,1] -=1;
-			shootCD = shootCDMax;
-			shoot(currentGun);
+			if (isLocal) {
+				oGame.playerCurrentLoadout[currentGun,1] -=1;
+				shootCD = shootCDMax;
+				shoot(currentGun);
+				
+				if (oGame.is_multiplayer) {
+					var buffer = buffer_create(2, buffer_fixed, 1);
+					
+					buffer_write(buffer, buffer_u8, DATA.PLAYER_SHOOT);
+					buffer_write(buffer, buffer_u8, playerID);
+					buffer_write(buffer, buffer_u8, currentGun);
+					
+					//send to server
+					if (!oGame.is_server) {
+						network_send_packet(oGame.server, buffer, buffer_get_size(buffer));	
+					} else { //send to client
+						for (var i=0; i<ds_list_size(oGame.clients); i++){
+							var soc = oGame.clients[| i];
+							if (soc < 0) {
+								network_send_packet(soc, buffer, buffer_get_size(buffer));	
+							}
+						}
+					}
+					
+					buffer_delete(buffer);
+				}
+			}
 		}
 
 		if (mouse_check_button(mb_right) && meleeCD <= 0){
