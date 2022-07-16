@@ -24,6 +24,9 @@ hurtbox = hurtbox_create(id, sEnemyTestMask);
 hitbox = noone;
 
 alert = false;
+target = noone;
+targetCD = 0;
+targetCDMax = 1200;
 
 
 //create ai pathing

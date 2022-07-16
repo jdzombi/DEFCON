@@ -13,8 +13,8 @@ function MoveTowardsPlayer(){
 		state = Attack;
 	}
 	
-	var _xS = sign(nearestPlayer.x - x);
-	var _yS = sign(nearestPlayer.y - y);
+	var _xS = sign(target.x - x);
+	var _yS = sign(target.y - y);
 	
 	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap)){
 		calcPathTimer = 0;
@@ -25,8 +25,8 @@ function MoveTowardsPlayer(){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, nearestPlayer.x, nearestPlayer.y, 1);
 		lastCheckedDistance = p_distance;
-		lastCheckedX = sign(nearestPlayer.x + xRand - x);
-		lastCheckedY = sign(nearestPlayer.y + yRand - y);
+		lastCheckedX = sign(target.x + xRand - x);
+		lastCheckedY = sign(target.y + yRand - y);
 	
 		if (_see_player){
 			var _pathX = path_get_point_x(path, 1);
