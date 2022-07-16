@@ -21,9 +21,9 @@ function MoveTowardsPlayer(){
 	}
 	
 	
-	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(nearestPlayer.x - x != lastCheckedX)|| sign(nearestPlayer.y - y != lastCheckedY )))){
+	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
-		var _see_player = mp_grid_path(global.mp_grid, path, x, y, nearestPlayer.x, nearestPlayer.y, 1);
+		var _see_player = mp_grid_path(global.mp_grid, path, x, y, target.x, target.y, 1);
 		lastCheckedDistance = p_distance;
 		lastCheckedX = sign(target.x + xRand - x);
 		lastCheckedY = sign(target.y + yRand - y);

@@ -1,11 +1,12 @@
 nearestPlayer = instance_nearest(x, y, oPlayer);
-p_distance = distance_to_object(nearestPlayer);
 
-if (target != nearestPlayer && targetCD <= 0){
+if (target != nearestPlayer && targetCD <= 0){ //get target if another player comes closer than current target
 	target = nearestPlayer;
 	targetCD = targetCDMax; //cd of 20 seconds on acquiring new target
 }
 targetCD--;
+
+p_distance = distance_to_object(target);
 
 script_execute(state);
 
