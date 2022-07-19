@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPickupTest",
-    "path": "sprites/sPickupTest/sPickupTest.yy",
+    "name": "sAmmo",
+    "path": "sprites/sAmmo/sAmmo.yy",
   },
   "solid": false,
   "visible": true,

@@ -17,3 +17,5 @@ if(cardinal>=0){
  var frame = (floor(image_index/4)*4)+1;
  image_index = frame;
 }
+
+depth = -bbox_bottom;

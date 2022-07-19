@@ -16,7 +16,7 @@ function MoveTowardsPlayer(){
 	var _xS = sign(target.x - x);
 	var _yS = sign(target.y - y);
 	
-	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap)){
+	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap) && !place_meeting(x + _xS, y + _yS, pEntity)){
 		calcPathTimer = 0;
 	}
 	

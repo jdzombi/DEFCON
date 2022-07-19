@@ -36,3 +36,5 @@ path = path_add();
 calcPathDelay = 2 * room_speed;
 //set timer for calculating path (wake-up time)
 calcPathTimer = irandom(30);
+
+depth = -bbox_bottom;
