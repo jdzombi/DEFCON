@@ -50,6 +50,7 @@ if (is_multiplayer){
 					x = buffer_read(buffer, buffer_s16);
 					y = buffer_read(buffer, buffer_s16);
 					sprite_index = buffer_read(buffer, buffer_u8);
+					image_index = buffer_read(buffer, buffer_u8);
 				}
 			}
 		}

@@ -7,7 +7,7 @@ xRand = irandom_range(0,20)-10;
 yRand = irandom_range(0,20)-10;
 collisionMap = "Col"
 //enemy stats
-hp = 10;
+hp = 5;
 
 state = Idle;
 xscale = 1;

@@ -20,8 +20,7 @@ function PlayerStateFree() {
 		localFrame = 0;	
 	}
 
-	//Update Image Index	
-	AnimatePlayer(playback);
+	
 	
 	//TODO Add entities to press E on (door, item, etc)
 	/*
@@ -119,4 +118,8 @@ function shoot(loadout){
 		dir = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y+14);
 		spd = 6;
 	}
+}
+
+function PlayerStateTransition(){
+	
 }

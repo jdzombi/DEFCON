@@ -1,10 +1,10 @@
 function AnimatePlayer(argument0) {
 	//Update Sprite
 	var _totalFrames = sprite_get_number(sprite_index)/8;
-	mouseAngle = round(oPlayer.mouseAngle/45);
+	mouseAngle = round(mouseAngle/45);
 	
 	var _modify = 0;
-	if((mouseAngle+4)%8 == (oPlayer.inputDirection/45)){
+	if((mouseAngle+4)%8 == (inputDirection/45)){
 		_modify = -1;
 	} else {
 		_modify = 1;	
