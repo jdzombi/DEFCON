@@ -27,9 +27,11 @@ localFrame = 0;
 
 //shooting stuff
 shootCD = 0;
-shootCDMax = 20;
+shootCDMax = .5 * room_speed;
 meleeCD = 0;
-meleeCDMax = 60;
+meleeCDMax = .5* room_speed;
+reloadSpeed = 0;
+reloadSpeedMax = .8 *room_speed;
 
 //Which weapon, 0 or 1
 currentGun = 0; //TODO Set current gun when controlling player

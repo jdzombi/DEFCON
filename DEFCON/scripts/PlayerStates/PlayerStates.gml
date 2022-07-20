@@ -63,7 +63,8 @@ function PlayerStateFree() {
 		//mouseAngle = xinputDirection;
 		
 		shootCD--;
-		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0){
+		reloadSpeed--;
+		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0 && reloadSpeed <= 0){
 			if (isLocal) {
 				oGame.playerCurrentLoadout[currentGun,1] -=1;
 				shootCD = shootCDMax;
@@ -97,12 +98,16 @@ function PlayerStateFree() {
 			meleeCD = meleeCDMax;
 			//create hitbox
 		}
+		
+		if(keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0){
+			reload();
+		}
 
 }
 
 //loadout = primary or secondary (0 or 1)
 function shoot(loadout){
-	
+	shootCD = shootCDMax;
 	//Pull the ID of the gun from the loadout of the player
 	tempGunID = oGame.playerCurrentLoadout[loadout,0];
 	//Pull the damage for the gun using the ID
@@ -118,6 +123,34 @@ function shoot(loadout){
 		dir = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y+14);
 		spd = 6;
 	}
+}
+
+function reload(){
+	reloadSpeed = reloadSpeedMax;
+//ID of our current gun
+var _tempGunID = oGame.playerCurrentLoadout[currentGun,0];
+
+if((oGame.playerCurrentLoadout[currentGun,2]>0)&& oGame.playerCurrentLoadout[currentGun,1]!= oGame.gunArray[_tempGunID,3]){
+
+	//How many bullets in the mag when reloading
+	var _clipRemaining = oGame.playerCurrentLoadout[currentGun,1];
+
+	//If we have enough ammo for a full mag
+	if(_clipRemaining + oGame.playerCurrentLoadout[currentGun,2] > (oGame.gunArray[_tempGunID,3])){
+	
+		//Remove max clip minus clip remaining from reserve ammo
+		oGame.playerCurrentLoadout[currentGun,2] -= (oGame.gunArray[_tempGunID,3]-_clipRemaining);
+		//Set mag to max
+		oGame.playerCurrentLoadout[currentGun,1] = oGame.gunArray[_tempGunID,3];
+	
+	} else {
+		//Otherwise, add the remaining ammo from reserve into clip
+		oGame.playerCurrentLoadout[currentGun,1] += oGame.playerCurrentLoadout[currentGun,2];
+		//Empty the reserve ammo
+		oGame.playerCurrentLoadout[currentGun,2] = 0;
+	}
+
+}	
 }
 
 function PlayerStateTransition(){

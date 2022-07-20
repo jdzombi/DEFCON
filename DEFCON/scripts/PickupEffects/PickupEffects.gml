@@ -8,8 +8,7 @@ function HoverObject(speed,height){
 /*in order for this to work, you have to leave a 1px space around
 the sprite. To change the color of the outline, put a colored outline w/
 alpha 1 in the sprite*/
-function DrawOutline(pw, tw, ph, th){
+function DrawOutline(uniForm_Handle, texture_width, texture_height){
 	shader_set(shOutline);
-	shader_set_uniform_f(pw, tw);
-	shader_set_uniform_f(ph, th);
+	shader_set_uniform_f(uniForm_Handle, texture_width, texture_height);
 }

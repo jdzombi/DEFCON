@@ -73,7 +73,7 @@ if(state = MoveTowardsPlayer){
 			
 		} 
 
-
+depth = -bbox_bottom;
 
 
 x+= hspd;
