@@ -49,10 +49,16 @@ if(state = MoveTowardsPlayer){
 		}
 	
 	}
+	
+	if(place_meeting(x, y,pEnemy)){
+		
+	}
+	
 
 }
 
 //Wall collision
+
 	if (TileMeetingPrecise(x + hspd, y, collisionMap) || place_meeting(x + hspd, y, pEntity)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
@@ -72,6 +78,7 @@ if(state = MoveTowardsPlayer){
 			//vspd = 0;
 			
 		} 
+
 
 depth = -bbox_bottom;
 
