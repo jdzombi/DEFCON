@@ -8,6 +8,7 @@ _xto = x + lengthdir_x(spd, dir);
 _yto = y + lengthdir_y(spd, dir);
 
 if (TileMeetingPrecise(x, y, collisionMap)) {
+	
 		instance_destroy();
 	}
 	
