@@ -7,7 +7,7 @@ var _xto, _yto, _inst;
 _xto = x + lengthdir_x(spd, dir);
 _yto = y + lengthdir_y(spd, dir);
 
-if (TileMeetingPrecise(x, y, collisionMap)) {
+if (TileMeetingPrecise(x, y, collisionMap) && (distance_to_object(oPlayer)>32)) {
 	
 		instance_destroy();
 	}
