@@ -16,7 +16,8 @@ function MoveTowardsPlayer(){
 	var _xS = sign(target.x - x);
 	var _yS = sign(target.y - y);
 	
-	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap) && !place_meeting(x + _xS, y + _yS, pEntity)){
+	//If we arent about to walk into a wall, reset our timer
+	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap) && !position_meeting(x + _xS, y + _yS, pEntity)){
 		calcPathTimer = 0;
 	}
 	

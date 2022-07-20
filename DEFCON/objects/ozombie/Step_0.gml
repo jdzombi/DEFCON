@@ -38,7 +38,7 @@ if(state = MoveTowardsPlayer){
 
 	//If we arent moving, walk around the enemy
 
-	if(hspd ==0 && vspd ==0 && state = MoveTowardsPlayer && distance_to_object(target)<45){
+	if(hspd ==0 && vspd ==0 && state = MoveTowardsPlayer){
 		var distX = abs(x - target.x);
 		var distY = abs(y - target.y);
 		//If we are closer to the player on the X axis, but not equal to
@@ -50,29 +50,26 @@ if(state = MoveTowardsPlayer){
 	
 	}
 	
-	if(place_meeting(x, y,pEnemy)){
-		
-	}
 	
 
 }
 
 //Wall collision
 
-	if (TileMeetingPrecise(x + hspd, y, collisionMap) || place_meeting(x + hspd, y, pEntity)) {
+	if (TileMeetingPrecise(x + hspd, y, collisionMap) || position_meeting(hCol + hspd, y, pEntity)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		}else if (TileMeetingPrecise(x - hspd, y, collisionMap) || place_meeting(x - hspd, y, pEntity)) {
+		}else if (TileMeetingPrecise(x - hspd, y, collisionMap) || position_meeting(hCol - hspd, y, pEntity)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		} else if (TileMeetingPrecise(x, y+vspd, collisionMap) || place_meeting(x, y+vspd, pEntity)) {
+		} else if (TileMeetingPrecise(x, y+vspd, collisionMap) || position_meeting(x, vCol+vspd, pEntity)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			vspd = 0;
 			
-		} else if (TileMeetingPrecise(x, y-vspd, collisionMap)|| place_meeting(x, y-vspd, pEntity)) {
+		} else if (TileMeetingPrecise(x, y-vspd, collisionMap)|| position_meeting(x, vCol-vspd, pEntity)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			//vspd = 0;

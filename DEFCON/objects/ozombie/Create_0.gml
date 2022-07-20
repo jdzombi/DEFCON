@@ -26,7 +26,7 @@ hitbox = noone;
 alert = false;
 target = noone;
 targetCD = 0;
-targetCDMax = 1200;
+targetCDMax = 1 * room_speed;
 
 
 //create ai pathing
