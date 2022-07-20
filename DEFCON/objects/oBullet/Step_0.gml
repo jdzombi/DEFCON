@@ -12,7 +12,7 @@ if (TileMeetingPrecise(x, y, collisionMap) && (distance_to_object(oPlayer)>32)) 
 		instance_destroy();
 	}
 	
-_inst = collision_line(x, y, _xto, _yto, pEnemy, false, true); 
+_inst = collision_line(x, y-12, _xto, _yto, pEnemy, false, true); 
 if (_inst != noone) {
     if (_inst.hit(damage)) {
 		
