@@ -16,6 +16,8 @@ global.mp_grid = mp_grid_create(0, 0, gridW, gridH, TILE_SIZE, TILE_SIZE);
 var lay_id = layer_get_id("Col");
 var tile_id = layer_tilemap_get_id(lay_id);
 
+mp_grid_add_instances(global.mp_grid, pEntity, 0);
+
 for (var i=0; i<_w; i+=TILE_SIZE){
 	for (var j=0; j<_h; j+=TILE_SIZE){
 		if (tilemap_get_at_pixel(tile_id, i, j)){
