@@ -1,0 +1,1 @@
+draw_sprite(cursor,frame,x,y);

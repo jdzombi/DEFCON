@@ -6,3 +6,4 @@ combatUI = false;
 if(room = rMenu){
 	global.mainMenu = true;
 } else global.mainMenu = false;
+
