@@ -74,6 +74,9 @@ function Stunned(){
 
 function Death(){
 	//TODO play death animation
+	if(irandom_range(0, 10)>9){
+		instance_create(x,y,oPickupTest);
+	}
 	instance_destroy();
 }
 

@@ -27,7 +27,7 @@ localFrame = 0;
 
 //shooting stuff
 shootCD = 0;
-shootCDMax = .5 * room_speed;
+shootCDMax = .3 * room_speed;
 meleeCD = 0;
 meleeCDMax = .5* room_speed;
 reloadSpeed = 0;
