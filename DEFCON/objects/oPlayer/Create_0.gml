@@ -2,7 +2,7 @@ event_inherited()
 currentObj = oPlayer;
 state = PlayerStateFree;
 lastState = state;
-
+hitbox = noone;
 collisionMap = "Col";
 
 image_speed = 0;
@@ -25,12 +25,14 @@ spriteWalk = sPlayerWalk; //TODO Add finalized sprite
 spriteIdle = sPlayerStand;
 localFrame = 0;
 
-//shooting stuff
+//attacking stuff
 shootCD = 0;
 shootCDMax = .3 * room_speed;
 meleeDamage = 1;
 meleeCD = 0;
 meleeCDMax = .5* room_speed;
+meleePlayerStunMax = .2 * room_speed;
+meleePlayerStun = 0;
 reloadSpeed = 0;
 reloadSpeedMax = .8 *room_speed;
 

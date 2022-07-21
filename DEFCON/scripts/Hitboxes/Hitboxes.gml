@@ -29,9 +29,10 @@ function hitbox_create(_sprite, _owner, _direction, _hittable, _hitInstFunction)
 		x = owner.x;
 		y = owner.y;
 		sprite_index = _sprite;
-		image_index = floor(owner.mouseAngle / 45);
-		endFrame = (sprite_get_number(_sprite)/8 *floor(_direction / 45) );//-1
-		show_debug_message(endFrame);
+		image_index = floor(owner.image_index / 8);
+		endFrame = (((sprite_get_number(_sprite)/8)+1) *floor(_direction / 45)-1 )%sprite_get_number(_sprite);//-1
+		show_debug_message("Start Frame: "+ string(image_index));
+		show_debug_message("End Frame: "+ string(endFrame));
 		hittable     = _hittable;
 		hit_instance = method(self, _hitInstFunction);
 	}

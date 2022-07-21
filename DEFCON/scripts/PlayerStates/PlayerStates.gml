@@ -96,6 +96,7 @@ function PlayerStateFree() {
 		}
 
 		if (mouse_check_button(mb_right) && meleeCD <= 0){
+			meleePlayerStun = meleePlayerStunMax;
 			state = PlayerStateMeleeAttack;
 		}
 		
@@ -117,6 +118,7 @@ function PlayerStateTransition(){
 function PlayerStateMeleeAttack(){
 	hspd = 0;
 	vspd = 0;
+	meleePlayerStun--;
 	var tempFrame = image_index / (sprite_get_number(sprite_index)/8);
 	sprite_index = sPlayerStand;
 	image_index = tempFrame;
@@ -131,7 +133,7 @@ function PlayerStateMeleeAttack(){
 	}	
 				
 		//if(animation_end()) state = PlayerStateFree;
-		if(!instance_exists(hitbox)) state = PlayerStateFree;
+		if(meleePlayerStun<=0) state = PlayerStateFree;
 	
 }
 
