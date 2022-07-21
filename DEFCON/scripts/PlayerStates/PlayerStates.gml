@@ -145,7 +145,7 @@ function shoot(loadout){
 	//Pull the damage for the gun using the ID
 	tempDamage = oGame.gunArray[tempGunID,2];
 	
-	ScreenShake(.5, 15, false, true);
+	ScreenShake(.5, 10, false, true);
 	//TODO Fix Spawn location
 	//TODO Change bullet behavior for different guns
 	var _inst = instance_create_layer(x, y-15, "bullets", oBullet);
