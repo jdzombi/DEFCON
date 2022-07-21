@@ -43,7 +43,7 @@ function hitbox_create(_sprite, _owner, _direction, _hittable, _hitInstFunction)
 /// @desc Checks if the current sprite_index has stopped animating
 function animation_end(endFrame) {
 	//return (image_index + image_speed*sprite_get_speed(sprite_index)/(sprite_get_speed_type(sprite_index)==spritespeed_framespergameframe? 1 : game_get_speed(gamespeed_fps)) >= endFrame);	
-	return image_index>=endFrame;	
+	return image_index>=endFrame-1;	
 }
 
 /// @param {int} id

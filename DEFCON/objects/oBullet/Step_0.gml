@@ -9,7 +9,7 @@ _yto = y + lengthdir_y(spd, dir);
 
 //Allows us to shoot through corners/walls we are close to, preventing bullet despawn where not intended
 if (TileMeetingPrecise(x, y, collisionMap) && (distance_to_object(oPlayer)>32)) {
-	
+		instance_create(x,y,oSpark);
 		instance_destroy();
 	}
 	

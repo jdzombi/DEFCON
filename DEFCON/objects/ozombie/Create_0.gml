@@ -6,6 +6,8 @@ sAttack = sGreenAttack;
 xRand = irandom_range(0,20)-10;
 yRand = irandom_range(0,20)-10;
 collisionMap = "Col"
+hCol = bbox_left;
+vCol = bbox_bottom;
 //enemy stats
 hp = 5;
 
