@@ -29,11 +29,14 @@ if (enabled) {
 		// Add to the list of instances hit this frame and perform the hitting
 		ds_list_add(hitList, _inst);
 		hit_instance(_inst);
+		//Melee Knockback
+		var _dir = point_direction(owner.x, owner.y,_inst.x,  _inst.y);
+		Push(lengthdir_x(5, _dir),lengthdir_y(5, _dir),_inst);
 	}
 }
 
 // Destroy when animation ends
-if (animation_end()) {
+if (animation_end(endFrame)) {
 	instance_destroy();
 	exit;
 }

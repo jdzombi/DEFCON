@@ -51,6 +51,7 @@
     {"id":{"name":"sEnemyTestMask","path":"sprites/sEnemyTestMask/sEnemyTestMask.yy",},"order":2,},
     {"id":{"name":"PickupEffects","path":"scripts/PickupEffects/PickupEffects.yy",},"order":3,},
     {"id":{"name":"oPreciseTileChecker","path":"objects/oPreciseTileChecker/oPreciseTileChecker.yy",},"order":4,},
+    {"id":{"name":"sPlayerMeleeHitbox","path":"sprites/sPlayerMeleeHitbox/sPlayerMeleeHitbox.yy",},"order":6,},
     {"id":{"name":"oHitbox","path":"objects/oHitbox/oHitbox.yy",},"order":0,},
     {"id":{"name":"oCursor","path":"objects/oCursor/oCursor.yy",},"order":8,},
     {"id":{"name":"rTest2","path":"rooms/rTest2/rTest2.yy",},"order":2,},

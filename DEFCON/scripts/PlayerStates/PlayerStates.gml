@@ -64,6 +64,7 @@ function PlayerStateFree() {
 		
 		shootCD--;
 		reloadSpeed--;
+		meleeCD--;
 		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0 && reloadSpeed <= 0){
 			if (isLocal) {
 				oGame.playerCurrentLoadout[currentGun,1] -=1;
@@ -95,8 +96,7 @@ function PlayerStateFree() {
 		}
 
 		if (mouse_check_button(mb_right) && meleeCD <= 0){
-			meleeCD = meleeCDMax;
-			//create hitbox
+			state = PlayerStateMeleeAttack;
 		}
 		
 		if(keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0){
@@ -104,6 +104,31 @@ function PlayerStateFree() {
 		}
 
 }
+
+//Room transition
+function PlayerStateTransition(){
+	
+}
+
+function PlayerStateMeleeAttack(){
+	hspd = 0;
+	vspd = 0;
+	
+	if(meleeCD <=0){
+		meleeCD = meleeCDMax;
+		hitbox = hitbox_create(sPlayerMeleeHitbox, id, direction,
+						[pEnemy], function(_inst) {
+			            	_inst.hit(oPlayer.meleeDamage);
+			            }
+					);
+	}	
+				
+		//if(animation_end()) state = PlayerStateFree;
+		if(!instance_exists(hitbox)) state = PlayerStateFree;
+	
+}
+
+//PLAYER ACTIONS ------------------------------------------------------------------------------------------------------------
 
 //loadout = primary or secondary (0 or 1)
 function shoot(loadout){
@@ -152,6 +177,3 @@ function reload(){
 	}	
 }
 
-function PlayerStateTransition(){
-	
-}
