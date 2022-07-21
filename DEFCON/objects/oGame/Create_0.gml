@@ -20,7 +20,7 @@ PLAYER = noone;
 //4 - Ammo Reserve Default
 //5 - Ammo Reserve Max
 gunArray = [
-	[0,GUN_TYPE.PISTOL,1,8,32,128]
+	[0,GUN_TYPE.PISTOL,2,8,32,128]
 
 ];
 
