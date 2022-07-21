@@ -102,6 +102,10 @@ function PlayerStateFree() {
 		if(keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0){
 			reload();
 		}
+		
+		if (isLocal){
+			AnimatePlayer(playback);
+		}
 
 }
 
@@ -113,6 +117,9 @@ function PlayerStateTransition(){
 function PlayerStateMeleeAttack(){
 	hspd = 0;
 	vspd = 0;
+	var tempFrame = image_index / (sprite_get_number(sprite_index)/8);
+	sprite_index = sPlayerStand;
+	image_index = tempFrame;
 	
 	if(meleeCD <=0){
 		meleeCD = meleeCDMax;

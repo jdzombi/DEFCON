@@ -7,10 +7,6 @@ if !(global.gamePaused) { script_execute(state); }
 
 depth = -bbox_bottom;
 
-if (isLocal){
-AnimatePlayer(playback);
-}
-
 //create buffer to send coord data to other player
 if (!isLocal) exit; //dont put anything below this otherwise it will exit for client
 if (oGame.is_multiplayer){
