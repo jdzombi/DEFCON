@@ -38,44 +38,63 @@ if(state = MoveTowardsPlayer){
 
 	//If we arent moving, walk around the enemy
 
-	if(hspd ==0 && vspd ==0 && state = MoveTowardsPlayer){
-		var distX = abs(x - target.x);
-		var distY = abs(y - target.y);
-		//If we are closer to the player on the X axis, but not equal to
-		if(distX < distY && distX !=0){
-			hspd = sign(x-target.x);
-		} else if(distY < distX && distY !=0){
-			vspd = sign(y-target.y);
-		}
+	//if(hspd ==0 && vspd ==0 && state = MoveTowardsPlayer){
+	//	var distX = abs(x - target.x);
+	//	var distY = abs(y - target.y);
+	//	//If we are closer to the player on the X axis, but not equal to
+	//	if((distX < distY) && (distX !=0)){
+	//		hspd = sign(x-target.x);
+	//	} else if((distY < distX) && (distY !=0)){
+	//		vspd = sign(y-target.y);
+	//	}
 	
-	}
+	//}
 	
 	
 
 }
 
 //Wall collision
+	//ctrl + k , mass comment / ctrl + shift + k, mass uncomment
+	//if (TileMeetingPrecise(x + hspd, y, collisionMap) || position_meeting(x + hspd, y, pEntity)) {
+	//		var _signToPlayer = sign(target.y - y);
+	//		vspd = moveSpeed * _signToPlayer;
+	//		hspd = 0;
+	//	}else if (TileMeetingPrecise(x - hspd, y, collisionMap) || position_meeting(x - hspd, y, pEntity)) {
+	//		var _signToPlayer = sign(target.y - y);
+	//		vspd = moveSpeed * _signToPlayer;
+	//		hspd = 0;
+	//	} else if (TileMeetingPrecise(x, y+vspd, collisionMap) || position_meeting(x, y+vspd, pEntity)) {
+	//		var _signToPlayer = sign(target.x - x);
+	//		hspd = moveSpeed* _signToPlayer;
+	//		vspd = 0;
+			
+	//	} else if (TileMeetingPrecise(x, y-vspd, collisionMap)|| position_meeting(x, y-vspd, pEntity)) {
+	//		var _signToPlayer = sign(target.x - x);
+	//		hspd = moveSpeed* _signToPlayer;
+	//		//vspd = 0;
+			
+	//	} 
 
-	if (TileMeetingPrecise(x + hspd, y, collisionMap) || position_meeting(hCol + hspd, y, pEntity)) {
+	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		}else if (TileMeetingPrecise(x - hspd, y, collisionMap) || position_meeting(hCol - hspd, y, pEntity)) {
+		}else if (TileMeetingPrecise(x - hspd, y, collisionMap)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		} else if (TileMeetingPrecise(x, y+vspd, collisionMap) || position_meeting(x, vCol+vspd, pEntity)) {
+		} else if (TileMeetingPrecise(x, y+vspd, collisionMap)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			vspd = 0;
 			
-		} else if (TileMeetingPrecise(x, y-vspd, collisionMap)|| position_meeting(x, vCol-vspd, pEntity)) {
+		} else if (TileMeetingPrecise(x, y-vspd, collisionMap)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			//vspd = 0;
 			
 		} 
-
 
 depth = -bbox_bottom;
 

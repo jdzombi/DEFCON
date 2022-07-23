@@ -6,8 +6,6 @@ function Idle(){
 
 function MoveTowardsPlayer(){
 	sprite_index = sWalk;
-		//Enter Move State
-		
 		
 	if (p_distance < 10){
 		state = Attack;
@@ -17,12 +15,12 @@ function MoveTowardsPlayer(){
 	var _yS = sign(target.y - y);
 	
 	//If we arent about to walk into a wall, reset our timer
-	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap) && !position_meeting(x + _xS, y + _yS, pEntity)){
+	if(!TileMeetingPrecise(x + _xS, y + _yS, collisionMap)){
 		calcPathTimer = 0;
 	}
 	
 	
-	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>15 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
+	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>35 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, target.x, target.y, 1);
 		lastCheckedDistance = p_distance;
@@ -74,8 +72,7 @@ function Stunned(){
 
 function Death(){
 	//TODO play death animation
-	//irandom_range(0, 10)>9
-	if(true){
+	if(irandom_range(0, 10)>8){
 		instance_create(x-9,y-5,oPickupTest);
 	}
 	instance_destroy();

@@ -118,9 +118,7 @@ function PlayerStateTransition(){
 function PlayerStateMeleeAttack(){
 	hspd = 0;
 	vspd = 0;
-	var tempFrame = image_index / (sprite_get_number(sprite_index)/8);
-	sprite_index = sPlayerStand;
-	image_index = tempFrame;
+	var tempFrame = image_index / floor(sprite_get_number(sprite_index)/8);
 	
 	if(meleeCD <=0){
 		meleeCD = meleeCDMax;

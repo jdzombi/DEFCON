@@ -20,5 +20,4 @@ function addAmmo(amount){
 	if((oGame.playerCurrentLoadout[oPlayer.currentGun,2] > oGame.gunArray[oPlayer.currentGun,5])){
 		oGame.playerCurrentLoadout[oPlayer.currentGun,2] = oGame.gunArray[oPlayer.currentGun,5];	
 	}
-//TODO: Make ammo boxes not disappear if you are full on ammo	
 }
