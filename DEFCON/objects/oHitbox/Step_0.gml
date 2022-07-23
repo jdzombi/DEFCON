@@ -31,7 +31,7 @@ if (enabled) {
 		hit_instance(_inst);
 		//Melee Knockback
 		var _dir = point_direction(owner.x, owner.y,_inst.x,  _inst.y);
-		Push(lengthdir_x(5, _dir),lengthdir_y(5, _dir),_inst);
+		Push(lengthdir_x(12, _dir),lengthdir_y(12, _dir),_inst);
 	}
 }
 

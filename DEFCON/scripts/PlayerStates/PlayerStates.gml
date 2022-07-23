@@ -118,20 +118,19 @@ function PlayerStateTransition(){
 function PlayerStateMeleeAttack(){
 	hspd = 0;
 	vspd = 0;
-	meleePlayerStun--;
 	var tempFrame = image_index / (sprite_get_number(sprite_index)/8);
 	sprite_index = sPlayerStand;
 	image_index = tempFrame;
 	
 	if(meleeCD <=0){
 		meleeCD = meleeCDMax;
-		hitbox = hitbox_create(sPlayerMeleeHitbox, id, direction,
+		hitbox = hitbox_create(sPlayerMeleeHitbox, id, floor(tempFrame),
 						[pEnemy], function(_inst) {
 			            	_inst.hit(oPlayer.meleeDamage);
 			            }
 					);
 	}	
-				
+		meleePlayerStun--;
 		//if(animation_end()) state = PlayerStateFree;
 		if(meleePlayerStun<=0) state = PlayerStateFree;
 	

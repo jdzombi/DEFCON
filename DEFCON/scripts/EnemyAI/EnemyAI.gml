@@ -1,5 +1,5 @@
 function Idle(){
-	if (p_distance > 5){
+	if (p_distance > 10){
 		state = MoveTowardsPlayer;
 	}
 }
@@ -9,7 +9,7 @@ function MoveTowardsPlayer(){
 		//Enter Move State
 		
 		
-	if (p_distance < 5){
+	if (p_distance < 10){
 		state = Attack;
 	}
 	
@@ -22,7 +22,7 @@ function MoveTowardsPlayer(){
 	}
 	
 	
-	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>10 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
+	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>15 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, target.x, target.y, 1);
 		lastCheckedDistance = p_distance;
@@ -52,7 +52,7 @@ function Attack(){
 		hspd = 0;
 		vspd = 0;
 		
-		if (p_distance > 5){
+		if (p_distance > 10){
 		state = MoveTowardsPlayer;
 	}
 		
@@ -74,8 +74,9 @@ function Stunned(){
 
 function Death(){
 	//TODO play death animation
-	if(irandom_range(0, 10)>9){
-		instance_create(x,y,oPickupTest);
+	//irandom_range(0, 10)>9
+	if(true){
+		instance_create(x-9,y-5,oPickupTest);
 	}
 	instance_destroy();
 }

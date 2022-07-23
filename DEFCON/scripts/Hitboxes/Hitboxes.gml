@@ -29,10 +29,9 @@ function hitbox_create(_sprite, _owner, _direction, _hittable, _hitInstFunction)
 		x = owner.x;
 		y = owner.y;
 		sprite_index = _sprite;
-		image_index = floor(owner.image_index / 8);
-		endFrame = (((sprite_get_number(_sprite)/8)+1) *floor(_direction / 45)-1 )%sprite_get_number(_sprite);//-1
-		show_debug_message("Start Frame: "+ string(image_index));
-		show_debug_message("End Frame: "+ string(endFrame));
+		image_index = _direction;	
+		var total = sprite_get_number(_sprite);
+		endFrame= (_direction + (total/8)) % total-1;	
 		hittable     = _hittable;
 		hit_instance = method(self, _hitInstFunction);
 	}
@@ -44,7 +43,7 @@ function hitbox_create(_sprite, _owner, _direction, _hittable, _hitInstFunction)
 /// @desc Checks if the current sprite_index has stopped animating
 function animation_end(endFrame) {
 	//return (image_index + image_speed*sprite_get_speed(sprite_index)/(sprite_get_speed_type(sprite_index)==spritespeed_framespergameframe? 1 : game_get_speed(gamespeed_fps)) >= endFrame);	
-	return image_index>=endFrame-1;	
+	return image_index>=endFrame;	
 }
 
 /// @param {int} id
