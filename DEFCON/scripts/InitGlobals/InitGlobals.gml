@@ -15,6 +15,7 @@ function InitPrincipalGlobals(){
 	global.mainMenu = false;
 	
 	global.enemyCountMax = 15;
+	global.difficulty = 1;
 	
 	global.iCamera = instance_create_layer(x, y, layer, oCamera);
 	display_set_gui_size(RESOLUTION_W,RESOLUTION_H);

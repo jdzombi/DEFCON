@@ -9,11 +9,11 @@ collisionMap = "Col"
 hCol = bbox_left;
 vCol = bbox_bottom;
 //enemy stats
-hp = 5;
+hp = 5 * max(floor(global.difficulty/2),1);
 
 state = Idle;
 xscale = 1;
-moveSpeed = 0.5;
+moveSpeed = min(0.3 * global.difficulty/2, .7);
 
 lastCheckedDistance = 0;
 lastCheckedX = 0;
