@@ -65,6 +65,7 @@ if (is_multiplayer){
 		}
 		//spawn enemy
 		else if (data == DATA.ENEMY_CREATE) {
+			global.difficulty = buffer_read(buffer, buffer_s16);
 			var zombieX = buffer_read(buffer, buffer_s16);
 			var zombieY = buffer_read(buffer, buffer_s16);
 			instance_create(zombieX,zombieY,oZombie);
