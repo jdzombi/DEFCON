@@ -6,7 +6,7 @@ if(timer<=0 && instance_number(oZombie)<global.enemyCountMax){
 		instance_create(x,y,instanceType);
 		timer=timerMax;
 		if (oGame.is_server){
-			var buffer = buffer_create(5, buffer_fixed, 1);
+			var buffer = buffer_create(7, buffer_fixed, 1);
 		
 			buffer_write(buffer, buffer_u8, DATA.ENEMY_CREATE);
 			buffer_write(buffer, buffer_s16, global.difficulty);

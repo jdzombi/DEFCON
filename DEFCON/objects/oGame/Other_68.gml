@@ -59,6 +59,8 @@ if (is_multiplayer){
 			var pID = buffer_read(buffer, buffer_u8);
 			with (oPlayer) {
 				if (pID == playerID) {
+					mouseAngle = buffer_read(buffer, buffer_s16);
+					currentGun = buffer_read(buffer, buffer_s16);
 					shoot(currentGun);
 				}
 			}

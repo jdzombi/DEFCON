@@ -72,11 +72,12 @@ function PlayerStateFree() {
 				shoot(currentGun);
 				
 				if (oGame.is_multiplayer) {
-					var buffer = buffer_create(2, buffer_fixed, 1);
+					var buffer = buffer_create(6, buffer_fixed, 1);
 					
 					buffer_write(buffer, buffer_u8, DATA.PLAYER_SHOOT);
 					buffer_write(buffer, buffer_u8, playerID);
-					buffer_write(buffer, buffer_u8, currentGun);
+					buffer_write(buffer, buffer_s16, mouseAngle);
+					buffer_write(buffer, buffer_s16, currentGun);
 					
 					//send to server
 					if (!oGame.is_server) {
