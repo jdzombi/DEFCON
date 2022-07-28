@@ -56,14 +56,12 @@ if (is_multiplayer){
 		}
 		//player shoot
 		else if (data == DATA.PLAYER_SHOOT){
-			var pID = buffer_read(buffer, buffer_u8);
-			with (oPlayer) {
-				if (pID == playerID) {
-					mouseAngle = buffer_read(buffer, buffer_s16);
-					currentGun = buffer_read(buffer, buffer_s16);
-					shoot(currentGun);
-				}
-			}
+			var bulletX = buffer_read(buffer, buffer_s16);
+			var bulletY = buffer_read(buffer, buffer_s16);
+			var _inst = instance_create_layer(bulletX, bulletY-15, "bullets", oBullet);
+			_inst.damage = buffer_read(buffer, buffer_s16);
+			_inst.dir = buffer_read(buffer, buffer_s16);
+			_inst.spd = buffer_read(buffer, buffer_s16);
 		}
 		//spawn enemy
 		else if (data == DATA.ENEMY_CREATE) {

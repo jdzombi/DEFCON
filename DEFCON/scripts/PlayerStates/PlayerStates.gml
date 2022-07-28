@@ -70,29 +70,6 @@ function PlayerStateFree() {
 				oGame.playerCurrentLoadout[currentGun,1] -=1;
 				shootCD = shootCDMax;
 				shoot(currentGun);
-				
-				if (oGame.is_multiplayer) {
-					var buffer = buffer_create(6, buffer_fixed, 1);
-					
-					buffer_write(buffer, buffer_u8, DATA.PLAYER_SHOOT);
-					buffer_write(buffer, buffer_u8, playerID);
-					buffer_write(buffer, buffer_s16, mouseAngle);
-					buffer_write(buffer, buffer_s16, currentGun);
-					
-					//send to server
-					if (!oGame.is_server) {
-						network_send_packet(oGame.server, buffer, buffer_get_size(buffer));	
-					} else { //send to client
-						for (var i=0; i<ds_list_size(oGame.clients); i++){
-							var soc = oGame.clients[| i];
-							if (soc < 0) {
-								network_send_packet(soc, buffer, buffer_get_size(buffer));	
-							}
-						}
-					}
-					
-					buffer_delete(buffer);
-				}
 			}
 		}
 
@@ -154,6 +131,26 @@ function shoot(loadout){
 		//dir = round(oPlayer.mouseAngle/45)*45;
 		dir = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y+14);
 		spd = 12;
+	}
+	
+	if (oGame.is_multiplayer) {
+		var buffer = buffer_create(11, buffer_fixed, 1);
+					
+		buffer_write(buffer, buffer_u8, DATA.PLAYER_SHOOT);
+		buffer_write(buffer, buffer_s16, _inst.x);
+		buffer_write(buffer, buffer_s16, _inst.y);
+		buffer_write(buffer, buffer_s16, _inst.damage);
+		buffer_write(buffer, buffer_s16, _inst.dir);
+		buffer_write(buffer, buffer_s16, _inst.spd);
+					
+		//send to server
+		if (!oGame.is_server) {
+			network_send_packet(oGame.server, buffer, buffer_get_size(buffer));	
+		} else { //send to client
+			SendPacketToClients(buffer);
+		}
+					
+		buffer_delete(buffer);
 	}
 }
 
