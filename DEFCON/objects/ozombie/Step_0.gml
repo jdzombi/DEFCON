@@ -104,10 +104,10 @@ y+= vspd;
 
 if (oGame.is_multiplayer && oGame.is_server && updateTimer <= 0){
 	var instanceID = instance_id;
-	var buffer = buffer_create(4, buffer_fixed, 1);
+	var buffer = buffer_create(7, buffer_fixed, 1);
 	
 	buffer_write(buffer, buffer_u8, DATA.ENEMY_SYNC);
-	buffer_write(buffer, buffer_u8, instanceID);
+	buffer_write(buffer, buffer_s16, instanceID);
 	buffer_write(buffer, buffer_s16, x);
 	buffer_write(buffer, buffer_s16, y);
 	
