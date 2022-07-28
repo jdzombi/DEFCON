@@ -45,6 +45,7 @@
     {"id":{"name":"sEnemyTest","path":"sprites/sEnemyTest/sEnemyTest.yy",},"order":1,},
     {"id":{"name":"AnimatePlayer","path":"scripts/AnimatePlayer/AnimatePlayer.yy",},"order":0,},
     {"id":{"name":"InstanceHandling","path":"scripts/InstanceHandling/InstanceHandling.yy",},"order":1,},
+    {"id":{"name":"SendPacket","path":"scripts/SendPacket/SendPacket.yy",},"order":5,},
     {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":5,},
     {"id":{"name":"oBox","path":"objects/oBox/oBox.yy",},"order":0,},
     {"id":{"name":"sBulletSpark","path":"sprites/sBulletSpark/sBulletSpark.yy",},"order":8,},

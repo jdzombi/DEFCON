@@ -25,11 +25,7 @@ if (oGame.is_multiplayer){
 	}
 	//send position to clients
 	else {
-		for (var i=0; i<ds_list_size(oGame.clients); i++) {
-			var soc = oGame.clients[| i];
-			if (soc < 0) continue;
-			network_send_packet(soc, buffer, buffer_get_size(buffer));
-		}
+		SendPacketToClients(buffer);
 	}
 
 	//delete buffer

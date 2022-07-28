@@ -72,5 +72,15 @@ if (is_multiplayer){
 			var zombieY = buffer_read(buffer, buffer_s16);
 			instance_create(zombieX,zombieY,oZombie);
 		}
+		
+		else if (data == DATA.ENEMY_SYNC) {
+			var instanceID = buffer_read(buffer, buffer_u8);
+			with (oZombie) {
+				if (instance_id == instanceID) {
+					x = buffer_read(buffer, buffer_s16);
+					y = buffer_read(buffer, buffer_s16);
+				}
+			}
+		}
 	}
 }
