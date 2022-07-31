@@ -74,7 +74,7 @@ if (is_multiplayer){
 		else if (data == DATA.ENEMY_SYNC) {
 			var instanceID = buffer_read(buffer, buffer_s16);
 			with (oZombie) {
-				if (instance_id == instanceID) {
+				if (instance_id == instanceID && instance_exists(instanceID)) {
 					x = buffer_read(buffer, buffer_s16);
 					y = buffer_read(buffer, buffer_s16);
 				}
