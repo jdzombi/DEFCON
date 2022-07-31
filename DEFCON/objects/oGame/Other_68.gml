@@ -58,7 +58,7 @@ if (is_multiplayer){
 		else if (data == DATA.PLAYER_SHOOT){
 			var bulletX = buffer_read(buffer, buffer_s16);
 			var bulletY = buffer_read(buffer, buffer_s16);
-			var _inst = instance_create_layer(bulletX, bulletY-15, "bullets", oBullet);
+			var _inst = instance_create_layer(bulletX, bulletY, "bullets", oBullet);
 			_inst.damage = buffer_read(buffer, buffer_s16);
 			_inst.dir = buffer_read(buffer, buffer_s16);
 			_inst.spd = buffer_read(buffer, buffer_s16);
