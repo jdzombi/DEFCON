@@ -37,7 +37,7 @@ function TileMeetingPrecise(_xp, _yp, _layer) {
 }
 
 function PlayerCollision() {
-
+/*
 	var _entityList = ds_list_create();
 
 	//Horizontal Entities
@@ -104,7 +104,7 @@ function PlayerCollision() {
 	}
 	ds_list_clear(_entityList);
 	ds_list_destroy(_entityList);
-
+*/
 	//Movement Setup
 	var _xCommit = 0;
 	var _yCommit = 0;

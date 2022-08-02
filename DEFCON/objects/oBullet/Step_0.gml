@@ -19,7 +19,7 @@ if (TileMeetingPrecise(x, y, collisionMap) && (distance_to_object(oPlayer)>32)) 
 _inst = collision_line(x, y-12, _xto, _yto, pEnemy, false, true); 
 if (_inst != noone) {
     if (_inst.hit(damage)) {
-		
+		instOwner.playerScore+=10;
 		Push(lengthdir_x(spd/2, dir),lengthdir_y(spd, dir),_inst);
 		instance_destroy();
 	

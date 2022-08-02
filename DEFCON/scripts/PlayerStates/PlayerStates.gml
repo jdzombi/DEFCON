@@ -73,6 +73,7 @@ function PlayerStateFree() {
 			}
 		}
 
+		//TOOD separate melee attack to local only
 		if (mouse_check_button(mb_right) && meleeCD <= 0){
 			meleePlayerStun = meleePlayerStunMax;
 			state = PlayerStateMeleeAttack;
@@ -102,6 +103,8 @@ function PlayerStateMeleeAttack(){
 		meleeCD = meleeCDMax;
 		hitbox = hitbox_create(sPlayerMeleeHitbox, id, floor(tempFrame),
 						[pEnemy], function(_inst) {
+							//TODO score change for multiplayer
+							oPlayer.playerScore+=20;
 			            	_inst.hit(oPlayer.meleeDamage);
 			            }
 					);

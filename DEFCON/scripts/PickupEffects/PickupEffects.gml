@@ -21,3 +21,8 @@ function addAmmo(amount){
 		oGame.playerCurrentLoadout[oPlayer.currentGun,2] = oGame.gunArray[oPlayer.currentGun,5];	
 	}
 }
+
+//Returns wether the player is near the object and pressed E
+function pickUp(){
+return (collision_point( mouse_x, mouse_y, id, true, false ) && keyboard_check(ord("E"))&& distance_to_object(oPlayer)<15);	
+}
