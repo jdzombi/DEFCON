@@ -1,5 +1,5 @@
 /// @description Layer Management
-//layer_set_visible("Col",false);
+layer_set_visible("Col",false);
 
 if(!instance_exists(oUIController)) instance_create(x,y,oUIController);
 
