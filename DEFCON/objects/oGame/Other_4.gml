@@ -27,7 +27,7 @@ for (var i=0; i<_w; i+=TILE_SIZE){
 }
 
 if (room == rTest2){
-	var player1 = instance_create_layer(248, 152, "Instances", oPlayer);
+	var player1 = instance_create_layer(220, 160, "Instances", oPlayer);
 	player1.playerID = 0;
 	
 	//add server to clients list

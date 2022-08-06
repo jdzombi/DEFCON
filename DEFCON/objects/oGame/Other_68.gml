@@ -15,7 +15,7 @@ if (is_multiplayer){
 		buffer_delete(buffer);
 	
 		//create player2 instance
-		var player2 = instance_create_layer(248, 152, "Instances", oPlayer);
+		var player2 = instance_create_layer(162, 160, "Instances", oPlayer);
 		player2.playerID = ds_list_size(clients);
 		player2.isLocal = false
 	
@@ -35,10 +35,18 @@ if (is_multiplayer){
 			oPlayer.playerID = count;
 		
 			//shows other active players on screen
-			for (var i=0; i<count; i++) {
-				var plr = instance_create_layer(248, 152, "Instances", oPlayer);
-				plr.playerID = i;
-				plr.isLocal = false;
+			if (oGame.is_server) {
+				for (var i=0; i<count; i++) {
+					var plr = instance_create_layer(162, 160, "Instances", oPlayer);
+					plr.playerID = i;
+					plr.isLocal = false;
+				}
+			} else {
+				for (var i=0; i<count; i++) {
+					var plr = instance_create_layer(220, 160, "Instances", oPlayer);
+					plr.playerID = i;
+					plr.isLocal = false;
+				}
 			}
 		}
 		//player update
@@ -62,6 +70,16 @@ if (is_multiplayer){
 			_inst.damage = buffer_read(buffer, buffer_s16);
 			_inst.dir = buffer_read(buffer, buffer_s16);
 			_inst.spd = buffer_read(buffer, buffer_s16);
+		}
+		//player melee
+		else if (data == DATA.PLAYER_MELEE){
+			var pID = buffer_read(buffer, buffer_u8);
+			
+			with (oPlayer){
+				if (pID == playerID) {
+					
+				}
+			}
 		}
 		//spawn enemy
 		else if (data == DATA.ENEMY_CREATE) {

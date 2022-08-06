@@ -75,8 +75,11 @@ function PlayerStateFree() {
 
 		//TOOD separate melee attack to local only
 		if (mouse_check_button(mb_right) && meleeCD <= 0){
-			meleePlayerStun = meleePlayerStunMax;
-			state = PlayerStateMeleeAttack;
+			if (isLocal){
+				meleePlayerStun = meleePlayerStunMax;
+				state = PlayerStateMeleeAttack;
+				MeleeBuffer();
+			}
 		}
 		
 		if(keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0){
