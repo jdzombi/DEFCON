@@ -15,15 +15,14 @@ if((sprite_index==sScientistArmReload || sprite_index==sScientistArmShoot)){
 	image_index = localFrame + (mouseAngle * _totalFrames);
 	localFrame += (sprite_get_speed(sprite_index) / (FRAME_RATE));
 	
-	
 	if(localFrame>= _totalFrames xor localFrame<0){
 		animationEnd = true;
 		busy = false;
 	} else animationEnd = false;
-	
-} 
+	show_debug_message(localFrame);
+} else localFrame = 0;
 
 if(!busy){
 	sprite_index = owner.armSpriteIndex;
-	localFrame = 0;	
+		
 }
