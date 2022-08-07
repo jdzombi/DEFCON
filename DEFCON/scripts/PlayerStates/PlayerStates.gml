@@ -65,7 +65,7 @@ function PlayerStateFree() {
 		shootCD--;
 		reloadSpeed--;
 		meleeCD--;
-		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0 && reloadSpeed <= 0){
+		if (mouse_check_button(mb_left) && shootCD <= 0 && oGame.playerCurrentLoadout[currentGun,1]>0 && reloadSpeed <= 0 && !armID.busy){
 			if (isLocal) {
 				oGame.playerCurrentLoadout[currentGun,1] -=1;
 				shootCD = shootCDMax;
@@ -82,7 +82,7 @@ function PlayerStateFree() {
 			}
 		}
 		
-		if(keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0){
+		if((keyboard_check_pressed(ord("R"))|| oGame.playerCurrentLoadout[currentGun,1]==0)&& !armID.busy){
 			reload();
 		}
 		
@@ -122,6 +122,8 @@ function PlayerStateMeleeAttack(){
 
 //loadout = primary or secondary (0 or 1)
 function shoot(loadout){
+	armID.sprite_index = armSpriteShoot;
+	armID.localFrame = 0;
 	shootCD = shootCDMax;
 	//Pull the ID of the gun from the loadout of the player
 	tempGunID = oGame.playerCurrentLoadout[loadout,0];
@@ -165,6 +167,8 @@ function reload(){
 	var _tempGunID = oGame.playerCurrentLoadout[currentGun,0];
 
 	if((oGame.playerCurrentLoadout[currentGun,2]>0)&& oGame.playerCurrentLoadout[currentGun,1]!= oGame.gunArray[_tempGunID,3]){
+		armID.sprite_index = armSpriteReload;
+		armID.localFrame = 0;
 		reloadSpeed = reloadSpeedMax;
 		//How many bullets in the mag when reloading
 		var _clipRemaining = oGame.playerCurrentLoadout[currentGun,1];

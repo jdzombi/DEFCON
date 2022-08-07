@@ -1,5 +1,23 @@
 event_inherited()
 
+//Update Arm object
+
+if(state == PlayerStateFree && armID.busy == false){
+	if(sprite_index == spriteWalk){
+		armSpriteIndex = armSpriteWalk;
+		armID.image_speed = 0;
+	} else {
+		armSpriteIndex = armSpriteIdle;
+		armID.image_speed = 0;
+	}
+	armID.image_index = image_index;
+}
+
+
+
+
+
+
 inputDirection = point_direction(0, 0, inputKeyDirectionRight - inputKeyDirectionLeft, inputKeyDirectionDown - inputKeyDirectionUp);
 inputMagnitude = (inputKeyDirectionRight - inputKeyDirectionLeft != 0) || (inputKeyDirectionDown - inputKeyDirectionUp != 0);
 

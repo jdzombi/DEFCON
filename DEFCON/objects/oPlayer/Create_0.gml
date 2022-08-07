@@ -21,8 +21,18 @@ speedWalkCol = 0.6;
 
 //Other defined walk speeds go here
 
-spriteWalk = sPlayerWalk; //TODO Add finalized sprite
-spriteIdle = sPlayerStand;
+spriteWalk = sScientistBodyWalk; //TODO Add finalized sprite
+spriteIdle = sScientistBodyIdle;
+
+armID = instance_create(x,y,oPlayerArms);
+armID.owner = id;
+armSpriteIndex = sScientistArmIdle;
+
+armSpriteIdle = sScientistArmIdle;
+armSpriteWalk = sScientistArmWalk;
+armSpriteReload = sScientistArmReload;
+armSpriteShoot = sScientistArmShoot;
+
 localFrame = 0;
 
 //attacking stuff

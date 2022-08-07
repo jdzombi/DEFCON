@@ -3,6 +3,7 @@ function AnimatePlayer(argument0) {
 	var _totalFrames = sprite_get_number(sprite_index)/8;
 	mouseAngle = round(mouseAngle/45);
 	
+	
 	var _modify = 0;
 	if((mouseAngle+4)%8 == (inputDirection/45)){
 		_modify = -1;
