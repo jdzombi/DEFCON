@@ -7,6 +7,8 @@ if (target != nearestPlayer && targetCD <= 0){ //get target if another player co
 targetCD--;
 
 p_distance = distance_to_object(target);
+//Despawn if too far from the player
+if(p_distance > 400) instance_destroy();
 
 script_execute(state);
 
@@ -76,25 +78,30 @@ if(state = MoveTowardsPlayer){
 			
 	//	} 
 
-	if (TileMeetingPrecise(x + hspd, y, collisionMap)) {
+	if (TileMeetingPrecise2(x + hspd, y, collisionMap)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		}else if (TileMeetingPrecise(x - hspd, y, collisionMap)) {
+		}else if (TileMeetingPrecise2(x - hspd, y, collisionMap)) {
 			var _signToPlayer = sign(target.y - y);
 			vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		} else if (TileMeetingPrecise(x, y+vspd, collisionMap)) {
+		} else if (TileMeetingPrecise2(x, y+vspd, collisionMap)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			vspd = 0;
 			
-		} else if (TileMeetingPrecise(x, y-vspd, collisionMap)) {
+		} else if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
 			var _signToPlayer = sign(target.x - x);
 			hspd = moveSpeed* _signToPlayer;
 			//vspd = 0;
 			
 		} 
+	
+		if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
+			vspd = 0;
+		}
+
 
 depth = -bbox_bottom;
 

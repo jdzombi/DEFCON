@@ -147,7 +147,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 20,
-    "yorigin": 33,
+    "yorigin": 30,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGreenWalk","path":"sprites/sGreenWalk/sGreenWalk.yy",},

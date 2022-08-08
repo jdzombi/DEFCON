@@ -19,7 +19,7 @@ if((sprite_index==sScientistArmReload || sprite_index==sScientistArmShoot)){
 		animationEnd = true;
 		busy = false;
 	} else animationEnd = false;
-	show_debug_message(localFrame);
+	
 } else localFrame = 0;
 
 if(!busy){

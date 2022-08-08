@@ -35,6 +35,45 @@ function TileMeetingPrecise(_xp, _yp, _layer) {
 
 	return false;
 }
+	
+
+function TileMeetingPrecise2(_xp, _yp, _layer) {
+	var _tm = layer_tilemap_get_id(_layer);
+
+	var _checker = oPreciseTileCheckerEnemy;
+	if !(instance_exists(_checker)) {
+		instance_create_depth(0, 0, -9999, _checker);
+		//_checker.visible = (global.debugMode) ? true : false;
+		_checker.visible = true;
+	}
+
+	var _x1 = tilemap_get_cell_x_at_pixel(_tm, (bbox_left + 0) + (_xp - x), y);
+	var _y1 = tilemap_get_cell_y_at_pixel(_tm, x, (bbox_top+20 + 0) + (_yp - y));
+	var _x2 = tilemap_get_cell_x_at_pixel(_tm, (bbox_right + 1) + (_xp - x), y);
+	var _y2 = tilemap_get_cell_y_at_pixel(_tm, x, (bbox_bottom + 1) + (_yp - y));
+	
+	
+	//Allows for walking off the top of the screen for edges
+	if(_y1==-1){
+		_y1 = 0;	
+	}
+
+	for (var _x = _x1; _x <= _x2; _x++) {
+		for (var _y = _y1; _y <= _y2; _y++) {
+			var _tile = tile_get_index(tilemap_get(_tm, _x, _y));
+		    if (_tile) {
+				_checker.x = _x * tilemap_get_tile_width(_tm);
+				_checker.y = _y * tilemap_get_tile_height(_tm);
+				_checker.image_index = _tile;
+				if (place_meeting(_xp, _yp, _checker)) {
+					return true;
+				}
+		    }
+		}
+	}
+
+	return false;
+}
 
 function PlayerCollision() {
 /*
