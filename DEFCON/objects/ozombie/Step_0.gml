@@ -8,7 +8,9 @@ targetCD--;
 
 p_distance = distance_to_object(target);
 //Despawn if too far from the player
+
 if(p_distance > 400) instance_destroy();
+
 
 script_execute(state);
 
