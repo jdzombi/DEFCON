@@ -1,6 +1,9 @@
 event_inherited()
 
-if(invincibilityTimer>0) invincibilityTimer--;
+if(invincibilityTimer>0){
+	invincibilityTimer--;
+	hurtbox = noone;
+} else hurtbox = hurtbox_create(id, sEnemyTestMask);
 
 //Update Arm object
 	if(sprite_index == spriteWalk){

@@ -99,6 +99,7 @@ function Death(){
 }
 
 function Push(xForce,yForce,obj){
+
 		if(!TileMeetingPrecise(obj.x+xForce,obj.y+yForce,"Col")){
 		obj.x += xForce;
 		obj.y += yForce;

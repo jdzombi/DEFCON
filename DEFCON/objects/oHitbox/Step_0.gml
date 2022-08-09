@@ -31,11 +31,8 @@ if (enabled) {
 		hit_instance(_inst);
 		//Melee Knockback
 		var _dir = point_direction(owner.x, owner.y,_inst.x,  _inst.y);
-		if(_inst.object_index == pEnemy){
-			Push(lengthdir_x(12, _dir),lengthdir_y(12, _dir),_inst);
-		}else if(_inst.object_index == oPlayer && _inst.invincibilityTimer<=0){
-			Push(lengthdir_x(4, _dir),lengthdir_y(4, _dir),_inst);
-		}
+		Push(lengthdir_x(8, _dir),lengthdir_y(8, _dir),_inst);
+		
 	}
 }
 
