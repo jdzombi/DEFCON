@@ -12,7 +12,8 @@ direction = CARDINAL_DIRECTION.DOWN;
 hSpeed = 0;
 vSpeed = 0;
 
-hp = 3;
+hpMax = 3;
+hp = hpMax;
 invincibilityTimerMax = room_speed * 2;
 invincibilityTimer = 0;
 
