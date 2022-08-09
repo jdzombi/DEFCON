@@ -135,6 +135,7 @@ function shoot(loadout){
 	//TODO Change bullet behavior for different guns
 	var _inst = instance_create_layer(x, y-15, "bullets", oBullet);
 	_inst.damage = tempDamage;
+	_inst.owner = id;
 	with (_inst){
 		//dir = round(oPlayer.mouseAngle/45)*45;
 		dir = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y+14);

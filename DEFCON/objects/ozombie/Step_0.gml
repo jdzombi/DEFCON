@@ -85,28 +85,28 @@ if(state = MoveTowardsPlayer){
 	//	} 
 
 	if (TileMeetingPrecise2(x + hspd, y, collisionMap)) {
-			var _signToPlayer = sign(target.y - y);
-			vspd = moveSpeed * _signToPlayer;
+	//		var _signToPlayer = sign(target.y - y);
+	//		vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		}else if (TileMeetingPrecise2(x - hspd, y, collisionMap)) {
-			var _signToPlayer = sign(target.y - y);
-			vspd = moveSpeed * _signToPlayer;
+	} else if (TileMeetingPrecise2(x - hspd, y, collisionMap)) {
+	//		var _signToPlayer = sign(target.y - y);
+	//		vspd = moveSpeed * _signToPlayer;
 			hspd = 0;
-		} else if (TileMeetingPrecise2(x, y+vspd, collisionMap)) {
-			var _signToPlayer = sign(target.x - x);
-			hspd = moveSpeed* _signToPlayer;
+	} else if (TileMeetingPrecise2(x, y+vspd, collisionMap)) {
+	//		var _signToPlayer = sign(target.x - x);
+	//		hspd = moveSpeed* _signToPlayer;
 			vspd = 0;
 			
-		} else if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
-			var _signToPlayer = sign(target.x - x);
-			hspd = moveSpeed* _signToPlayer;
-			//vspd = 0;
+	} else if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
+	//		var _signToPlayer = sign(target.x - x);
+	//		hspd = moveSpeed* _signToPlayer;
+			vspd = 0;
 			
-		} 
+	} 
 	
-		if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
-			vspd = 0;
-		}
+	//	if (TileMeetingPrecise2(x, y-vspd, collisionMap)) {
+	//		vspd = 0;
+	//	}
 
 
 depth = -bbox_bottom;

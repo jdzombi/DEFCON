@@ -7,7 +7,7 @@ depth = oPlayer.depth - 1;
 //If we are shooting or reloading
 if((sprite_index==sScientistArmReload || sprite_index==sScientistArmShoot)){
 	busy = true;
-	show_debug_message(image_index);
+	//show_debug_message(image_index);
 	var _totalFrames = sprite_get_number(sprite_index)/8;
 	mouseAngle = owner.mouseAngle;
 	

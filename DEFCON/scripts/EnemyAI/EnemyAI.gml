@@ -19,8 +19,8 @@ function MoveTowardsPlayer(){
 		calcPathTimer = 0;
 	}
 	
-	if(despawnTimer <= 0){
-	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>35 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
+	if(despawnTimer > 0){
+	//if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>35 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, target.x, target.y, 1);
 		lastCheckedDistance = p_distance;
@@ -35,7 +35,14 @@ function MoveTowardsPlayer(){
 			hspd = lengthdir_x(moveSpeed, _angle);
 			vspd = lengthdir_y(moveSpeed, _angle);
 			
-			
+		//if zombie is stuck on corner, move towards edge to unstuck
+		if (TileMeetingPrecise2(x + hspd, y, collisionMap) || TileMeetingPrecise2(x - hspd, y, collisionMap)) {
+			if (TileMeetingPrecise2(x + hspd, y + 1, collisionMap)) vspd = -(moveSpeed);
+			if (TileMeetingPrecise2(x + hspd, y - 1, collisionMap)) vspd = moveSpeed;
+		} else if (TileMeetingPrecise2(x, y+vspd, collisionMap) || TileMeetingPrecise2(x, y-vspd, collisionMap)){
+			if (TileMeetingPrecise2(x + 1, y+vspd, collisionMap)) hspd = -(moveSpeed);
+			if (TileMeetingPrecise2(x - 1, y+vspd, collisionMap)) hspd = moveSpeed;
+		}
 			
 			
 		} else {
@@ -43,7 +50,7 @@ function MoveTowardsPlayer(){
 			vspd = 0;
 		}	
 	}
-	}
+	//}
 }
 	
 function Attack(){
@@ -73,7 +80,6 @@ function Stunned(){
 
 function Death(){
 	//TODO add to player score of who defeated the enemy
-	oPlayer.playerScore+=50;
 	//TODO play death animation
 	if(irandom_range(0, 10)>8){
 		instance_create(x-9,y-5,oPickupTest);
