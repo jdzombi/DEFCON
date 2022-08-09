@@ -2,17 +2,18 @@ event_inherited()
 
 //Update Arm object
 
-if(state == PlayerStateFree && armID.busy == false){
+
 	if(sprite_index == spriteWalk){
 		armSpriteIndex = armSpriteWalk;
-		armID.image_speed = 0;
 	} else {
 		armSpriteIndex = armSpriteIdle;
-		armID.image_speed = 0;
 	}
+	
+
+if(state == PlayerStateFree){
+	armID.image_speed = 0;
 	armID.image_index = image_index;
 }
-
 
 
 
