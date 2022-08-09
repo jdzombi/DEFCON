@@ -1,7 +1,6 @@
 event_inherited()
 
 if(invincibilityTimer>0) invincibilityTimer--;
-show_debug_message(invincibilityTimer);
 
 //Update Arm object
 	if(sprite_index == spriteWalk){
@@ -15,10 +14,6 @@ if(state == PlayerStateFree){
 	armID.image_speed = 0;
 	armID.image_index = image_index;
 }
-
-
-
-
 
 inputDirection = point_direction(0, 0, inputKeyDirectionRight - inputKeyDirectionLeft, inputKeyDirectionDown - inputKeyDirectionUp);
 inputMagnitude = (inputKeyDirectionRight - inputKeyDirectionLeft != 0) || (inputKeyDirectionDown - inputKeyDirectionUp != 0);

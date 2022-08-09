@@ -106,7 +106,6 @@ function PlayerStateMeleeAttack(){
 		meleeCD = meleeCDMax;
 		hitbox = hitbox_create(sPlayerMeleeHitbox, id, floor(tempFrame),
 						[pEnemy], function(_inst) {
-							//TODO score change for multiplayer
 							owner.playerScore+=20;
 			            	_inst.hit(oPlayer.meleeDamage);
 							
@@ -196,3 +195,20 @@ function reload(){
 function PlayerStateDown(){
 	
 }
+
+function hit(_damage){ 
+
+if(invincibilityTimer>0){
+	return false;	
+} else {
+	invincibilityTimer = invincibilityTimerMax;
+	hp -= _damage;
+	show_debug_message(hp);
+	if (hp <= 0){
+		state = PlayerStateDown;
+	} 
+	return true;
+	
+}
+
+};

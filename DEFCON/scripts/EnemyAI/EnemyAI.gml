@@ -62,7 +62,9 @@ function Attack(){
 		
 		hitbox = hitbox_create2(sGreenAttackHitbox, id, floor(tempFrame)+1,
 						[oPlayer], function(_inst) {
-			            	_inst.hit(damage);
+			            	with(_inst){
+								hit(1);	
+							}
 							
 			            }
 					);
