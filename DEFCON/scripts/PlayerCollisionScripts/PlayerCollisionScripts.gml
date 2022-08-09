@@ -44,7 +44,7 @@ function TileMeetingPrecise2(_xp, _yp, _layer) {
 	if !(instance_exists(_checker)) {
 		instance_create_depth(0, 0, -9999, _checker);
 		//_checker.visible = (global.debugMode) ? true : false;
-		_checker.visible = true;
+		_checker.visible = false;
 	}
 
 	var _x1 = tilemap_get_cell_x_at_pixel(_tm, (bbox_left + 0) + (_xp - x), y);

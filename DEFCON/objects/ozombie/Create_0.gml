@@ -9,7 +9,7 @@ collisionMap = "Col"
 hCol = bbox_left;
 vCol = bbox_bottom;
 
-despawnDistance = 500;
+
 despawnTimerMax = room_speed*5;
 despawnTimer = despawnTimerMax;
 
@@ -29,6 +29,9 @@ vspd = 0;
 mask_index = sEnemyTest;
 hurtbox = hurtbox_create(id, sEnemyTestMask);
 hitbox = noone;
+
+
+damage = 1;
 
 alert = false;
 target = noone;

@@ -3,6 +3,7 @@ currentObj = oPlayer;
 state = PlayerStateFree;
 lastState = state;
 hitbox = noone;
+hurtbox = hurtbox_create(id, sEnemyTestMask);
 collisionMap = "Col";
 
 image_speed = 0;
@@ -10,6 +11,10 @@ direction = CARDINAL_DIRECTION.DOWN;
 
 hSpeed = 0;
 vSpeed = 0;
+
+hp = 3;
+invincibilityTimerMax = room_speed * 2;
+invincibilityTimer = 0;
 
 mouseAngle = 0;
 
@@ -57,6 +62,8 @@ if(instance_exists(oUIController))oUIController.combatUI = true;
 //local or client
 isLocal = true;
 playerID = -1;
+
+
 
 if (global.targetX != -1) {
 	x = global.targetX;

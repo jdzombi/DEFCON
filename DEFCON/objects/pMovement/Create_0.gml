@@ -28,3 +28,9 @@ gateMimicDPadLeft = false;
 gateMimicDPadRight = false;
 gateMimicDPadUp = false;
 gateMimicDPadDown = false;
+
+
+
+hit = function(_damage, _attackType){ 
+
+};

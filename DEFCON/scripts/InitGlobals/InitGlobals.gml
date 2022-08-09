@@ -13,6 +13,7 @@ function InitPrincipalGlobals(){
 	global.targetDirection = 0;
 	global.mp_grid = 0;
 	global.mainMenu = false;
+	global.despawnDistance = 500;
 	
 	global.enemyCountMax = 15;
 	global.difficulty = 1;

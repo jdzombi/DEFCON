@@ -9,11 +9,11 @@ targetCD--;
 p_distance = distance_to_object(target);
 //Despawn if too far from the player
 
-if(p_distance > despawnDistance){
+if(p_distance > global.despawnDistance){
 	despawnTimer--;
 	if(despawnTimer<=0) instance_destroy();
 	
-} else if(p_distance < despawnDistance - 100) despawnTimer = despawnTimerMax; 
+} else if(p_distance < global.despawnDistance - 100) despawnTimer = despawnTimerMax; 
 
 
 script_execute(state);

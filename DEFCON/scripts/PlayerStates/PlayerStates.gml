@@ -107,8 +107,9 @@ function PlayerStateMeleeAttack(){
 		hitbox = hitbox_create(sPlayerMeleeHitbox, id, floor(tempFrame),
 						[pEnemy], function(_inst) {
 							//TODO score change for multiplayer
-							oPlayer.playerScore+=20;
+							owner.playerScore+=20;
 			            	_inst.hit(oPlayer.meleeDamage);
+							
 			            }
 					);
 	}	
@@ -192,3 +193,6 @@ function reload(){
 	}	
 }
 
+function PlayerStateDown(){
+	
+}

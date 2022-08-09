@@ -38,6 +38,31 @@ function hitbox_create(_sprite, _owner, _direction, _hittable, _hitInstFunction)
 	return _inst;
 }
 
+/// @func hitbox_create
+/// @param {sprite} sprite
+/// @param {instance} owner
+/// @param {number} xscale
+/// @param {array} hittable
+/// @param {function} hit_instance_function
+/// @returns {instance} Id of the created instance
+function hitbox_create2(_sprite, _owner, _direction, _hittable, _hitInstFunction) {
+	var _inst = instance_create_depth(0, 0, 0, oHitbox);
+	with (_inst) {
+		owner = _owner;
+		x = owner.x;
+		y = owner.y;
+		sprite_index = _sprite;
+		//image_index = _direction;	
+		image_index = owner.image_index;
+		var total = sprite_get_number(_sprite);
+		endFrame= floor(((_direction + (total/4)) % total)-1);	
+		hittable     = _hittable;
+		hit_instance = method(self, _hitInstFunction);
+	}
+	return _inst;
+}
+
+
 /// @func animation_end()
 /// @returns {bool} Whether the sprite_index has stopped animating (true), or not (false)
 /// @desc Checks if the current sprite_index has stopped animating

@@ -1,8 +1,9 @@
 event_inherited()
 
+if(invincibilityTimer>0) invincibilityTimer--;
+show_debug_message(invincibilityTimer);
+
 //Update Arm object
-
-
 	if(sprite_index == spriteWalk){
 		armSpriteIndex = armSpriteWalk;
 	} else {

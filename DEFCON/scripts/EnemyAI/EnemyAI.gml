@@ -57,6 +57,15 @@ function Attack(){
 	sprite_index = sAttack;
 		hspd = 0;
 		vspd = 0;
+		var tempFrame = image_index - (image_index)%4;
+
+		
+		hitbox = hitbox_create2(sGreenAttackHitbox, id, floor(tempFrame)+1,
+						[oPlayer], function(_inst) {
+			            	_inst.hit(damage);
+							
+			            }
+					);
 		
 		if (p_distance > 10){
 		state = MoveTowardsPlayer;
@@ -84,11 +93,12 @@ function Death(){
 	if(irandom_range(0, 10)>8){
 		instance_create(x-9,y-5,oPickupTest);
 	}
-	instance_destroy();
+	instance_destroy(self);
 }
 
 function Push(xForce,yForce,obj){
+		if(!TileMeetingPrecise(obj.x+xForce,obj.y+yForce,"Col")){
 		obj.x += xForce;
 		obj.y += yForce;
-	
+		}
 }
