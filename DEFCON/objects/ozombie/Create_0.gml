@@ -8,6 +8,11 @@ yRand = irandom_range(0,20)-10;
 collisionMap = "Col"
 hCol = bbox_left;
 vCol = bbox_bottom;
+
+despawnDistance = 500;
+despawnTimerMax = room_speed*5;
+despawnTimer = despawnTimerMax;
+
 //enemy stats
 hp = 5 * max(floor(global.difficulty/2),1);
 

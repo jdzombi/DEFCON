@@ -19,7 +19,7 @@ function MoveTowardsPlayer(){
 		calcPathTimer = 0;
 	}
 	
-	if(p_distance < 400){
+	if(despawnTimer <= 0){
 	if (calcPathTimer-- <= 0 || (abs(p_distance - lastCheckedDistance)>35 && (sign(target.x - x != lastCheckedX)|| sign(target.y - y != lastCheckedY )))){
 		calcPathTimer = calcPathDelay;
 		var _see_player = mp_grid_path(global.mp_grid, path, x, y, target.x, target.y, 1);
