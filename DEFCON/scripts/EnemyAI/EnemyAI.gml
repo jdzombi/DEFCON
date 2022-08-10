@@ -80,6 +80,7 @@ function Death(){
 	if(irandom_range(0, 10)>8){
 		instance_create(x-9,y-5,oPickupTest);
 	}
+	instance_destroy(hitbox);
 	instance_destroy(self);
 }
 
