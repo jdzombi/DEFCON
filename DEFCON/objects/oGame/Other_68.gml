@@ -119,5 +119,9 @@ if (is_multiplayer){
 				}
 			}
 		}
+		//win
+		else if (data == DATA.GAME_WIN) {
+			room = rEnd;
+		}
 	}
 }

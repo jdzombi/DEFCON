@@ -63,3 +63,20 @@ function DoorBuffer() {
 		buffer_delete(buffer);
 	}
 }
+
+function WinBuffer() {
+	if (oGame.is_multiplayer) {
+		var buffer = buffer_create(1, buffer_fixed, 1);
+					
+		buffer_write(buffer, buffer_u8, DATA.GAME_WIN);
+
+		//send to server
+		if (!oGame.is_server) {
+			network_send_packet(oGame.server, buffer, buffer_get_size(buffer));	
+		} else { //send to client
+			SendPacketToClients(buffer);
+		}
+					
+		buffer_delete(buffer);
+	}
+}

@@ -5,7 +5,7 @@ if (pickUp() && _p.playerScore>=cost) {
 	
 	_p.playerScore-=cost;
 	room_goto(rEnd);
-	DoorBuffer();
+	WinBuffer();
 }
 
 if (distance_to_object(oPlayer) < 20) {
