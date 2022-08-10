@@ -13,3 +13,5 @@ if (distance_to_object(oPlayer) < 20) {
 } else {
 	showText = false;
 }
+
+costString = "Cost: " + string(cost);
