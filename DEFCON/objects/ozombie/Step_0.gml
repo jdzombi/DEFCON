@@ -64,7 +64,13 @@ if(state = MoveTowardsPlayer){
 		}	
 	} 
 	
-	
+if (hspd == 0 && vspd == 0){
+	stuckTimer--	
+}
+
+if (stuckTimer <= 0) {
+	instance_destroy();		
+}
 	
 
 depth = -bbox_bottom;

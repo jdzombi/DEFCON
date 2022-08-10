@@ -1,4 +1,4 @@
-timerMax = max((room_speed*10)/global.difficulty,1);//*instance_number(oSpawner);
+timerMax = max((room_speed*5)/global.difficulty,1);//*instance_number(oSpawner);
 timer--;
 nearestPlayer = instance_nearest(x, y, oPlayer);
 

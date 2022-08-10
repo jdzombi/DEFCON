@@ -50,4 +50,8 @@ calcPathTimer = irandom(30);
 updateTimerMax = 1 * room_speed;
 updateTimer = updateTimerMax;
 
+stuckTimerMax = 30 * room_speed;
+stuckTimer = stuckTimerMax;
+
+
 depth = -bbox_bottom;
