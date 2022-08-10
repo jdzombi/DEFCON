@@ -9,6 +9,8 @@ collisionMap = "Col"
 hCol = bbox_left;
 vCol = bbox_bottom;
 
+stunTimerMax = .2 * room_speed;
+stunTimer = 0;
 
 despawnTimerMax = room_speed*5;
 despawnTimer = despawnTimerMax;
