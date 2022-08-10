@@ -1,1 +1,2 @@
-cost = 1000
+cost = 50;
+doorNumber = 2;
