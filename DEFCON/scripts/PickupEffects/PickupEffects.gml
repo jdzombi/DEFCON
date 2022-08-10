@@ -26,3 +26,7 @@ function addAmmo(amount){
 function pickUp(){
 return (collision_point( mouse_x, mouse_y, id, true, false ) && keyboard_check(ord("E"))&& distance_to_object(oPlayer)<15);	
 }
+
+function openDoor(){
+	return (keyboard_check(ord("E"))&& distance_to_object(oPlayer)<15);
+}

@@ -13,6 +13,8 @@ PAUSED_TIME = get_timer();
 PAUSED = false;
 PLAYER = noone;
 
+difficultyTimer = 0;
+
 //0 - Gun ID
 //1 - Gun type Enum
 //2 - Damage

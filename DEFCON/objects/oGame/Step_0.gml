@@ -1,3 +1,6 @@
+difficultyTimer++;
+global.difficulty = min(floor(1 + (difficultyTimer/room_speed)/45),20);
+show_debug_message(global.difficulty);
 //Menu inputs
 if (room == rMenu){
 	//host
