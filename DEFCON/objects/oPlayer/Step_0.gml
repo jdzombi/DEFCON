@@ -1,5 +1,9 @@
 event_inherited()
 
+if(hpRegenCoolDown<=0){
+	hp = hpMax
+} else hpRegenCoolDown--;
+
 if(invincibilityTimer>0){
 	invincibilityTimer--;
 	hurtbox = noone;

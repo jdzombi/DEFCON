@@ -22,3 +22,8 @@ if (combatUI){
 	//TODO draw points for all players
 	draw_text(xPlacementPoints+4, yPlacementPoints-1, string(oPlayer.playerScore));
 }
+
+if(gameOver){
+	draw_text(camera_get_view_x(view_camera[0])/2,camera_get_view_y(view_camera[0])/2 , "fuck you");
+	
+}

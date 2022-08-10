@@ -16,6 +16,8 @@ hpMax = 3;
 hp = hpMax;
 invincibilityTimerMax = room_speed * 2;
 invincibilityTimer = 0;
+hpRegenCoolDownMax = room_speed * 5;
+hpRegenCoolDown = hpRegenCoolDownMax;
 
 mouseAngle = 0;
 
@@ -52,7 +54,7 @@ meleePlayerStun = 0;
 reloadSpeed = 0;
 reloadSpeedMax = .8 *room_speed;
 
-playerScore = 2000;
+playerScore = 20000;
 
 //Which weapon, 0 or 1
 currentGun = 0; //TODO Set current gun when controlling player

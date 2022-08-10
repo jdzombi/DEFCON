@@ -201,6 +201,7 @@ function hit(_damage){
 if(invincibilityTimer>0){
 	return false;	
 } else {
+	hpRegenCoolDown = hpRegenCoolDownMax;
 	invincibilityTimer = invincibilityTimerMax;
 	hp -= _damage;
 	show_debug_message(hp);
