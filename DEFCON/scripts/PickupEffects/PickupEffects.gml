@@ -24,7 +24,7 @@ function addAmmo(amount){
 
 //Returns wether the player is near the object and pressed E
 function pickUp(){
-return (collision_point( mouse_x, mouse_y, id, true, false ) && keyboard_check(ord("E"))&& distance_to_object(oPlayer)<15);	
+return (collision_point( mouse_x, mouse_y, id, true, false ) && keyboard_check_pressed(ord("E"))&& distance_to_object(oPlayer)<15);	
 }
 
 function openDoor(){
