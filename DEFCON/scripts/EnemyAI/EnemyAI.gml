@@ -48,6 +48,12 @@ function Attack(){
 			            }
 					);
 		
+		if(animationEnd){
+			instance_destroy(hitbox);
+			hitbox = noone;
+		}
+		
+		
 		if (p_distance > 10){
 		state = MoveTowardsPlayer;
 	}

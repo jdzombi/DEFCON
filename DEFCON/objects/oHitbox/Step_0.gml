@@ -37,7 +37,7 @@ if (enabled) {
 }
 
 // Destroy when animation ends
-if (animation_end(endFrame)) {
+if (animation_end(endFrame-1)) {
 	instance_destroy();
 	exit;
 }
