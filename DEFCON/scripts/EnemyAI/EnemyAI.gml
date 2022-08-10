@@ -77,7 +77,7 @@ function Stunned(){
 function Death(){
 	//TODO add to player score of who defeated the enemy
 	//TODO play death animation
-	if(irandom_range(0, 10)>8){
+	if(irandom_range(0, 10)>7){
 		instance_create(x-9,y-5,oPickupTest);
 	}
 	instance_destroy(hitbox);

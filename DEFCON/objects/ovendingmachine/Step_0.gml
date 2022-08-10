@@ -1,6 +1,6 @@
-if (pickUp()) {
+var _inst = instance_nearest(x,y,oPlayer);
+if (pickUp() && _inst.playerScore > cost) {
 	instance_create(x+random_range(-30,25),y+16+random_range(-8,8),oPickupTest);
-	var _inst = instance_nearest(x,y,oPlayer);
 	_inst.playerScore-=cost;
 }
 

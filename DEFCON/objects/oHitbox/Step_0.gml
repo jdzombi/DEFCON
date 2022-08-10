@@ -5,6 +5,7 @@ if (PAUSED) {
 
 if (enabled) {
 	
+if (object_exists(owner)){	
 if(owner.object_index == oPlayer){
 		_inst = instance_place(x, y, pEnemy); 
 	if (_inst != noone) {
@@ -16,6 +17,7 @@ if(owner.object_index == oPlayer){
 			
 	    }
 	}
+}
 }
 	
 	ds_list_clear(hitListFrame);
