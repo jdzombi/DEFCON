@@ -25,3 +25,23 @@ function MeleeBuffer() {
 		buffer_delete(buffer);
 	}
 }
+
+function ArmsBuffer() {
+	if (oGame.is_multiplayer) {
+		var buffer = buffer_create(4, buffer_fixed, 1);
+					
+		buffer_write(buffer, buffer_u8, DATA.PLAYER_ARMS);
+		buffer_write(buffer, buffer_u8, owner.playerID);
+		buffer_write(buffer, buffer_u8, sprite_index);
+		buffer_write(buffer, buffer_u8, image_index);
+
+		//send to server
+		if (!oGame.is_server) {
+			network_send_packet(oGame.server, buffer, buffer_get_size(buffer));	
+		} else { //send to client
+			SendPacketToClients(buffer);
+		}
+					
+		buffer_delete(buffer);
+	}
+}

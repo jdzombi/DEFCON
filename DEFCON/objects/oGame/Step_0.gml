@@ -31,5 +31,3 @@ if (room == rMenu){
 		room_goto(rTest2);	
 	}
 }
-
-show_debug_message(instance_number(oHurtbox));

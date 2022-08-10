@@ -27,3 +27,7 @@ if(!busy){
 		
 }
 
+if (owner.isLocal) {
+	ArmsBuffer();
+}
+
