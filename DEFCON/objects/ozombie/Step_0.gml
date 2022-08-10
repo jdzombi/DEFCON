@@ -45,7 +45,7 @@ if(state = MoveTowardsPlayer){
 	}
 
 }
-
+	//wall collision
 	if (TileMeetingPrecise2(x + hspd, y, collisionMap)) {
 		if (hspd > 0) {
 			hspd = 0;
@@ -63,6 +63,7 @@ if(state = MoveTowardsPlayer){
 			vspd = 0;
 		}	
 	} 
+	
 	
 	
 

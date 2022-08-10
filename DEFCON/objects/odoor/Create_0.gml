@@ -1,4 +1,4 @@
 cost = 750;
-showText = 0;
+showText = false;
 depth = bbox_bottom;
 image_speed = 0;
