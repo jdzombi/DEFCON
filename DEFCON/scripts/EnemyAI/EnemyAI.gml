@@ -86,7 +86,15 @@ function Death(){
 
 function Push(xForce,yForce,obj){
 
-		if(!TileMeetingPrecise(obj.x+xForce,obj.y+yForce,"Col")){
+		if(!TileMeetingPrecise(obj.x+xForce,obj.y+yForce,"Col") && !place_meeting(obj.x+xForce,obj.y+yForce, oDoor)){
+		obj.x += xForce;
+		obj.y += yForce;
+		}
+}
+
+function Push2(xForce,yForce,obj){
+
+		if(!TileMeetingPrecise2(obj.x+xForce,obj.y+yForce,"Col") && !place_meeting(obj.x+xForce,obj.y+yForce, oDoor)){
 		obj.x += xForce;
 		obj.y += yForce;
 		}

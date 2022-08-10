@@ -21,7 +21,7 @@ if (_inst != noone) {
     if (_inst.hit(damage)) {
 		instOwner.playerScore+=10;
 		if (_inst.hp <= 0) instOwner.playerScore+=50;
-		Push(lengthdir_x(spd/2, dir),lengthdir_y(spd, dir),_inst);
+		Push2(lengthdir_x(spd/2, dir),lengthdir_y(spd, dir),_inst);
 		instance_destroy();
 	
         exit;
