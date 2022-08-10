@@ -5,6 +5,7 @@ if (pickUp() && _p.playerScore>=cost) {
 	
 	_p.playerScore-=cost;
 	instance_destroy();	
+	DoorBuffer();
 }
 
 if (distance_to_object(oPlayer) < 20) {

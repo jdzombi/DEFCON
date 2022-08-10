@@ -110,5 +110,14 @@ if (is_multiplayer){
 				}
 			}
 		}
+		//update doors
+		else if (data == DATA.DOOR_DESTROY) {
+			var doorID = buffer_read(buffer, buffer_s16);
+			with oDoor {
+				if (doorNumber == doorID) {
+					instance_destroy();
+				}
+			}
+		}
 	}
 }
