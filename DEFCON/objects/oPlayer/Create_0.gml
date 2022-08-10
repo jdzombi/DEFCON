@@ -54,7 +54,7 @@ meleePlayerStun = 0;
 reloadSpeed = 0;
 reloadSpeedMax = .8 *room_speed;
 
-playerScore = 20000;
+playerScore = 0;
 
 //Which weapon, 0 or 1
 currentGun = 0; //TODO Set current gun when controlling player
