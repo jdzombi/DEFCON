@@ -66,8 +66,8 @@ if (is_multiplayer){
 		else if (data == DATA.PLAYER_ARMS) {
 			var pID = buffer_read(buffer, buffer_u8);
 			
-			with (oPlayer) {
-				if (pID == playerID) {
+			with (oPlayerArms) {
+				if (pID == owner.playerID) {
 					sprite_index = buffer_read(buffer, buffer_u8);
 					image_index = buffer_read(buffer, buffer_u8);
 				}
