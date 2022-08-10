@@ -24,6 +24,6 @@ if (combatUI){
 }
 
 if(gameOver){
-	draw_text(camera_get_view_x(view_camera[0])/2,camera_get_view_y(view_camera[0])/2 , "fuck you");
+	draw_text(camera_get_view_x(view_camera[0])/2 - 50,camera_get_view_y(view_camera[0])/2 - 25 , "Thanks for Playing!");
 	
 }
