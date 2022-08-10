@@ -94,8 +94,8 @@ function Push(xForce,yForce,obj){
 
 function Push2(xForce,yForce,obj){
 
-		if(!TileMeetingPrecise2(obj.x+xForce,obj.y+yForce,"Col") && !place_meeting(obj.x+xForce,obj.y+yForce, oDoor)){
-		obj.x += xForce;
-		obj.y += yForce;
+		if(!TileMeetingPrecise2(obj.x+xForce,obj.y+yForce,"Col") && !place_meeting(obj.x+xForce,obj.y+yForce, oDoor) && !TileMeetingPrecise2(obj.x,obj.y,"Col")){
+		obj.hspd += xForce;
+		obj.vspd += yForce;
 		}
 }

@@ -105,7 +105,7 @@ function PlayerStateMeleeAttack(){
 	if(meleeCD <=0){
 		meleeCD = meleeCDMax;
 		hitbox = hitbox_create(sPlayerMeleeHitbox, id, floor(tempFrame),
-						[pEnemy], function(_inst) {
+						[oZombie], function(_inst) {
 							owner.playerScore+=20;
 			            	_inst.hit(oPlayer.meleeDamage);
 							
@@ -204,7 +204,6 @@ if(invincibilityTimer>0){
 	hpRegenCoolDown = hpRegenCoolDownMax;
 	invincibilityTimer = invincibilityTimerMax;
 	hp -= _damage;
-	show_debug_message(hp);
 	if (hp <= 0){
 		state = PlayerStateDown;
 	} 

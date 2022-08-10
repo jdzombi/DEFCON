@@ -4,6 +4,20 @@ if (PAUSED) {
 }
 
 if (enabled) {
+	
+if(owner.object_index == oPlayer){
+		_inst = instance_place(x, y, pEnemy); 
+	if (_inst != noone) {
+	    if (_inst.hit(damage)) {
+			owner.playerScore+=10;
+			if (_inst.hp <= 0) owner.playerScore+=50;
+			var _dir = point_direction(owner.x, owner.y,_inst.x,  _inst.y);
+			Push(lengthdir_x(8, _dir),lengthdir_y(8, _dir),_inst);
+			
+	    }
+	}
+}
+	
 	ds_list_clear(hitListFrame);
 	_num = instance_place_list(x, y, oHurtbox, hitListFrame, false);
 	
