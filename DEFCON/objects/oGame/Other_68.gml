@@ -77,7 +77,8 @@ if (is_multiplayer){
 			
 			with (oPlayer){
 				if (pID == playerID) {
-					
+					meleePlayerStun = meleePlayerStunMax;
+					state = PlayerStateMeleeAttack;
 				}
 			}
 		}

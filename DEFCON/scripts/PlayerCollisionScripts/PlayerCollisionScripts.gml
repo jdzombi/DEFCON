@@ -47,9 +47,9 @@ function TileMeetingPrecise2(_xp, _yp, _layer) {
 		_checker.visible = false;
 	}
 
-	var _x1 = tilemap_get_cell_x_at_pixel(_tm, (bbox_left + 0) + (_xp - x), y);
+	var _x1 = tilemap_get_cell_x_at_pixel(_tm, (bbox_left + 5) + (_xp - x), y);
 	var _y1 = tilemap_get_cell_y_at_pixel(_tm, x, (bbox_top+20 + 0) + (_yp - y));
-	var _x2 = tilemap_get_cell_x_at_pixel(_tm, (bbox_right + 1) + (_xp - x), y);
+	var _x2 = tilemap_get_cell_x_at_pixel(_tm, (bbox_right + 5) + (_xp - x), y);
 	var _y2 = tilemap_get_cell_y_at_pixel(_tm, x, (bbox_bottom + 1) + (_yp - y));
 	
 	
@@ -76,11 +76,11 @@ function TileMeetingPrecise2(_xp, _yp, _layer) {
 }
 
 function PlayerCollision() {
-/*
+
 	var _entityList = ds_list_create();
 
 	//Horizontal Entities
-	var _entityCount = instance_position_list(x + hSpeed, y, pEntity, _entityList, false);
+	var _entityCount = instance_position_list(x + hSpeed, y, oDoor, _entityList, false);
 	var _snapX;
 	while (_entityCount > 0) {
 		//var _entityList = ds_list_create();
@@ -105,7 +105,7 @@ function PlayerCollision() {
 	ds_list_clear(_entityList);
 
 	//Vertical Entities
-	var _entityCount = instance_position_list(x, y + vSpeed, pEntity, _entityList, false);
+	var _entityCount = instance_position_list(x, y + vSpeed, oDoor, _entityList, false);
 	var _snapY;
 	while (_entityCount > 0) {
 		var _entityCheck = _entityList[|0];	
@@ -129,7 +129,7 @@ function PlayerCollision() {
 	ds_list_clear(_entityList);
 
 	//Diagonal Entities
-	var _entityCount = instance_position_list(x + (sign(hSpeed) * 4), y + (sign(vSpeed) * 4), pEntity, _entityList, false);
+	var _entityCount = instance_position_list(x + (sign(hSpeed) * 4), y + (sign(vSpeed) * 4), oDoor, _entityList, false);
 	while (_entityCount > 0) {
 		var _entityCheck = _entityList[|0];	
 		if (_entityCheck.entityCollision) {
@@ -143,7 +143,7 @@ function PlayerCollision() {
 	}
 	ds_list_clear(_entityList);
 	ds_list_destroy(_entityList);
-*/
+
 	//Movement Setup
 	var _xCommit = 0;
 	var _yCommit = 0;
@@ -303,6 +303,26 @@ function PlayerCollision() {
 			}
 		}
 	}
+	
+	//collision with doors
+	/*if (position_meeting(x + hSpeed, y, oDoor)){
+		if (hSpeed > 0) {
+		_xCommit = 0;
+		}
+	} else if (position_meeting(x - hSpeed, y, oDoor)){
+		if (hSpeed < 0) {
+		_xCommit = 0;
+		}
+	} else if (position_meeting(x, y + vSpeed, oDoor)){
+		if (hSpeed > 0) {
+		_yCommit = 0;
+		}
+	} else if (position_meeting(x, y - vSpeed, oDoor)){
+		if (hSpeed < 0){
+		_yCommit = 0;
+		}
+	}*/
+	
 
 
 	//Move Commit
